@@ -1,0 +1,556 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>三市場早盤日報 2026-10-21｜台股・台指期・A股</title>
+<style>
+:root{--ink:#1a2b4a;--ink2:#24406e;--sub:#33415c;--mut:#8a93a6;--line:#e3e7ef;--up:#d6332e;--down:#1a9d4b;--bg:#e8edf5;--cn:#8c2323;--gold:#c9932b;}
+*{box-sizing:border-box;}
+body{margin:0;background:linear-gradient(180deg,#dfe6f2 0%,#eef1f7 240px,#f5f7fb 100%);color:var(--sub);font-family:-apple-system,"Helvetica Neue",Arial,"PingFang TC","Microsoft JhengHei",sans-serif;line-height:1.7;}
+.wrap{max-width:920px;margin:22px auto 34px;background:#fff;padding:0 40px 48px;border-radius:14px;box-shadow:0 10px 42px rgba(20,40,80,.16);overflow:hidden;}
+header{background:linear-gradient(120deg,#131f38 0%,#1a2b4a 55%,#2b4a7d 100%);margin:0 -40px;padding:28px 40px 22px;color:#dbe4f2;}
+header h1{font-size:25px;color:#fff;margin:0 0 6px;letter-spacing:1px;}
+header h1 .accent{color:#f2b544;}
+header .meta{font-size:12.5px;color:#aebbd2;line-height:1.6;}
+.headlines{margin:18px 0 2px;border:1px solid var(--line);border-radius:10px;overflow:hidden;box-shadow:0 1px 5px rgba(20,40,80,.05);}
+.headlines .hl{display:flex;gap:12px;align-items:baseline;padding:10px 16px;background:#fff;border-bottom:1px solid var(--line);}
+.headlines .hl:last-child{border-bottom:none;}
+.headlines .hl:nth-child(even){background:#f7f9fc;}
+.headlines .mkt{flex:0 0 auto;font-weight:800;font-size:12.5px;color:#fff;padding:2px 11px;border-radius:20px;letter-spacing:2px;position:relative;top:1px;}
+.headlines .mkt-tw{background:linear-gradient(90deg,var(--ink),var(--ink2));}
+.headlines .mkt-cn{background:linear-gradient(90deg,#5f1414,var(--cn));}
+.headlines .mkt-us{background:linear-gradient(90deg,#6d4c00,#a87b14);}
+.headlines .hl p{margin:0;font-size:14.5px;font-weight:600;color:var(--ink);}
+.headlines .hl p b{color:var(--up);}
+.headlines .hl p b.g{color:var(--down);}
+.kpis{display:flex;gap:12px;flex-wrap:wrap;margin:14px 0 4px;}
+.kpi{flex:1 1 180px;background:linear-gradient(180deg,#fbfcfe,#f1f4fa);border:1px solid var(--line);border-top:4px solid var(--ink2);border-radius:10px;padding:10px 14px 8px;}
+.kpi.red{border-top-color:var(--up);}
+.kpi.green{border-top-color:var(--down);}
+.kpi.gold{border-top-color:var(--gold);}
+.kpi .k-label{font-size:11.5px;color:var(--mut);letter-spacing:.5px;}
+.kpi .k-value{font-size:21px;font-weight:800;color:var(--ink);line-height:1.35;}
+.kpi .k-sub{font-size:11.5px;color:var(--sub);}
+h2{font-size:17.5px;color:#fff;margin:34px 0 14px;background:linear-gradient(90deg,var(--ink) 0%,var(--ink2) 70%,#3d5f92 100%);padding:8px 14px;border-radius:7px;letter-spacing:.5px;box-shadow:0 2px 8px rgba(20,40,80,.18);}
+h2.cn{background:linear-gradient(90deg,#5f1414 0%,var(--cn) 70%,#b03a3a 100%);}
+h2.pick{background:linear-gradient(90deg,#6d4c00 0%,#a87b14 70%,#c9932b 100%);}
+h3{font-size:14.5px;color:var(--ink);margin:16px 0 6px;border-bottom:2px solid #eef1f6;padding-bottom:3px;}
+table{border-collapse:collapse;width:100%;margin:8px 0 14px;font-size:13px;}
+.grid{border:1px solid var(--line);border-radius:8px;overflow:hidden;}
+.grid th,.grid td{border-bottom:1px solid var(--line);padding:7px 10px;text-align:left;vertical-align:top;}
+.grid th{background:var(--ink);color:#fff;font-weight:600;border-bottom:none;}
+.grid tr:nth-child(even) td{background:#f7f9fc;}
+.grid tr:hover td{background:#eef3fa;}
+.kv th{background:#eef1f6;color:var(--ink);text-align:left;width:34%;padding:8px 10px;border:1px solid var(--line);font-weight:600;}
+.kv td{border:1px solid var(--line);padding:8px 10px;}
+.levels td{border:1px solid var(--line);padding:9px 12px;font-size:15px;}
+.levels .r2{background:#fdecea;color:var(--up);font-weight:700;width:40%;}
+.levels .r1{background:#fdf0e9;color:#e07b3e;font-weight:700;}
+.levels .pivot{background:#eaf0f7;color:var(--ink);font-weight:700;}
+.levels .s1{background:#e9f6ef;color:#2e9e6b;font-weight:700;}
+.levels .s2{background:#e6f5ec;color:var(--down);font-weight:700;}
+.up{color:var(--up);font-weight:600;}
+.down{color:var(--down);font-weight:600;}
+.badge{display:inline-block;background:var(--ink);color:#fff;padding:2px 10px;border-radius:20px;font-size:12.5px;font-weight:700;}
+.badge-bull{background:#d6332e;}
+.badge-bear{background:#1a9d4b;}
+.badge-flat{background:#5b6b84;}
+.tag{display:inline-block;background:#eaf0f7;color:var(--ink);padding:1px 7px;border-radius:3px;font-size:11px;font-weight:600;}
+.pill{display:inline-block;padding:1px 9px;border-radius:20px;font-size:11.5px;font-weight:700;white-space:nowrap;}
+.pill-a{background:#d6332e;color:#fff;}
+.pill-b{background:#e07b3e;color:#fff;}
+.pill-c{background:#5b6b84;color:#fff;}
+.stocks th{background:#3d2e00;}
+.stocks td:first-child{font-weight:700;color:var(--ink);white-space:nowrap;}
+.scorebar{background:#eef1f6;border-radius:6px;height:9px;width:86px;display:inline-block;vertical-align:middle;overflow:hidden;}
+.scorebar i{display:block;height:100%;background:linear-gradient(90deg,#e07b3e,#d6332e);border-radius:6px;}
+.callout{border-radius:8px;padding:12px 16px;margin:12px 0;font-size:13.5px;box-shadow:0 1px 5px rgba(20,40,80,.06);}
+.callout-hl{background:#fff6e6;border:1px solid #f0c878;border-left:5px solid var(--gold);}
+.callout-ok{background:#e9f6ef;border:1px solid #a9dcc4;border-left:5px solid var(--down);}
+.note{font-size:11.5px;color:var(--mut);margin:4px 0;}
+.warn{background:linear-gradient(180deg,#fdf0ef,#fdecea);border:1px solid #f0a9a4;border-left:5px solid var(--up);color:#9c2b27;padding:12px 16px;border-radius:8px;font-size:13px;margin:16px 0 12px;box-shadow:0 1px 5px rgba(156,43,39,.08);}
+.side{border-radius:8px;padding:12px 16px;margin:10px 0;font-size:13px;box-shadow:0 1px 5px rgba(20,40,80,.05);}
+.side-long{background:#fdecea;border:1px solid #f0b0ac;border-left:5px solid var(--up);}
+.side-short{background:#e9f6ef;border:1px solid #a9dcc4;border-left:5px solid var(--down);}
+.side ul{margin:6px 0 0;padding-left:18px;}
+code{background:#eef1f6;padding:1px 5px;border-radius:3px;font-size:12px;color:var(--ink);}
+footer{margin-top:28px;border-top:2px solid var(--ink);padding-top:14px;font-size:11.5px;color:var(--mut);}
+.disclaimer{background:#f7f8fa;border:1px solid var(--line);border-left:5px solid var(--mut);padding:12px 16px;border-radius:8px;font-size:12px;color:#55606f;}
+svg{display:block;width:100%;height:auto;margin:10px 0 4px;border:1px solid var(--line);border-radius:8px;}
+@media (max-width:680px){.wrap{padding:0 16px 36px;margin:0;border-radius:0;}header{margin:0 -16px;padding:22px 16px 16px;}.kpi{flex:1 1 140px;}table{font-size:12px;}}
+@media print{body{background:#fff;}.wrap{box-shadow:none;margin:0;max-width:none;}}
+</style>
+</head>
+<body>
+<div class="wrap">
+<header>
+<h1>&#127749; 三市場早盤日報｜台股・台指期・<span class="accent">A股</span></h1>
+<div class="meta">2026-10-21（週三）早盤版・12:00 午盤驗證・12:34 選股專區・12:51 三行總結 &nbsp;|&nbsp; 資料基準：10/20 台股／A股收盤 + 台指期夜盤（10/20 15:00~10/21 05:00）+ 美股 10/20 收盤 &nbsp;|&nbsp; 台指期主力契約 TX 202611（10 月合約今日結算）</div>
+</header>
+
+<div class="headlines">
+<div class="hl"><span class="mkt mkt-tw">台股</span><p>夜盤強彈 <b>634 點</b>收復失土，但外資連十賣、期貨淨空 <b>89,748 口</b>未解——今日結算日是<b>反彈驗證日</b>，量能與季線 46,113 攻防定多空。</p></div>
+<div class="hl"><span class="mkt mkt-cn">陸股</span><p>指數震盪、結構當道：滬指守 3,700 靠<b>政策流動性呵護</b>，<b class="g">寧德時代財報重挫逾 10%</b>拖累創業板，數據要素與算力硬件的<b>題材輪動</b>才是主戰場。</p></div>
+<div class="hl"><span class="mkt mkt-us">美股</span><p>道瓊獨強 <b>+1.02%</b>、科技平盤，資金轉進藍籌與防禦股；油價盤中衝破 110 美元後反轉收跌——今晚 <b>Meta、特斯拉財報</b>定調 AI 資本支出敘事。</p></div>
+</div>
+
+<div class="kpis">
+<div class="kpi red"><div class="k-label">台指期夜盤 TX 202610</div><div class="k-value">46,975 <span class="up" style="font-size:14px;">+634</span></div><div class="k-sub">11 月合約夜盤收 47,154（+644）</div></div>
+<div class="kpi"><div class="k-label">台股綜合評分</div><div class="k-value">+2 <span style="font-size:13px;color:var(--mut);">/ 100</span></div><div class="k-sub">中性偏多｜籌碼 -20・技術 +18・總經 +16</div></div>
+<div class="kpi green"><div class="k-label">外資期貨淨空單</div><div class="k-value">89,748 口</div><div class="k-sub">單日回補 1,397 口，仍處高位</div></div>
+<div class="kpi gold"><div class="k-label">A股午盤（10/21）</div><div class="k-value">滬指 -0.31%</div><div class="k-sub">寧德時代財報後跌逾 10%，題材逆勢活躍</div></div>
+</div>
+
+<div class="warn">
+<b>&#9888; 今日是台指期 10 月合約結算日，多空大對決。</b><br/>
+台指期夜盤強彈 <b>634 點</b>收 46,975，一舉收復昨日現貨重挫 529 點的失土；但外資現貨<b>連十賣、累計提款 8,380 億元</b>，期貨淨空單仍高達 <b>89,748 口</b>——這波反彈是「財報利多＋空單回補」驅動，<b>不是籌碼翻多</b>。結算日 13:45 前後波動放大，追高與裸部位都要節制。A股方面，寧德時代三季報後早盤重挫逾 10%，拖累創業板指領跌，政策題材則逆勢活躍，指數與個股嚴重分化。
+</div>
+
+<h2>0. 三市場總覽儀表板</h2>
+<table class="grid">
+<tr><th>市場</th><th>前一交易日收盤</th><th>夜盤／隔夜訊號</th><th>今日態度</th><th>綜合評分</th></tr>
+<tr><td><b>台股現貨（加權）</b></td><td>46,292.93 <span class="down">-529.15 / -1.13%</span></td><td>連兩日回測季線 46,113 有守；夜盤領先反彈</td><td>反彈震盪</td><td>&mdash;</td></tr>
+<tr><td><b>台指期 TX 202611</b></td><td>日盤結算 46,510</td><td>夜盤 <b>47,154</b> <span class="up">+644 / +1.38%</span></td><td><span class="badge badge-flat">中性偏多</span></td><td><b>+2 / 100</b></td></tr>
+<tr><td><b>A股（上證指數）</b></td><td>3,735.37 <span class="up">+0.12%</span></td><td>LPR 連 17 月不變、央行流動性呵護、結構行情</td><td><span class="badge badge-flat">中性偏多</span></td><td><b>+5 / 100</b></td></tr>
+<tr><td><b>美股（10/20）</b></td><td>道瓊 52,495.88 <span class="up">+1.02%</span></td><td>價值輪動、科技分歧；油價盤中衝高後反轉回落</td><td>溫和偏多</td><td>&mdash;</td></tr>
+</table>
+<p class="note">評分方法比照範本：籌碼（台股）／政策資金（A股）40% + 技術 30% + 總經／外部 30%，區間 -100 ~ +100。A股午盤後依盤面修正，見第 4 節驗證框。</p>
+
+<h2>1. 隔夜國際市場速覽</h2>
+
+<svg viewBox="0 0 820 250" xmlns="http://www.w3.org/2000/svg" role="img">
+<rect x="0" y="0" width="820" height="250" fill="#ffffff"/>
+<text x="18" y="26" font-size="13" font-weight="700" fill="#1a2b4a">10/20（週二）美股與半導體鏈漲跌幅（%）</text>
+<line x1="330" y1="42" x2="330" y2="222" stroke="#c9d1e0" stroke-width="1.5"/>
+<text x="330" y="238" font-size="10" fill="#8a93a6" text-anchor="middle">0%</text>
+<line x1="255" y1="42" x2="255" y2="222" stroke="#eef1f6" stroke-width="1"/>
+<text x="255" y="238" font-size="10" fill="#8a93a6" text-anchor="middle">-1%</text>
+<text x="405" y="238" font-size="10" fill="#8a93a6" text-anchor="middle">+1%</text>
+<text x="480" y="238" font-size="10" fill="#8a93a6" text-anchor="middle">+2%</text>
+
+<text x="18" y="60" font-size="11.5" fill="#33415c" font-weight="700">道瓊工業</text>
+<rect x="330" y="50" width="77" height="14" fill="#d6332e"/>
+<text x="415" y="61" font-size="11" font-weight="700" fill="#d6332e">+1.02%</text>
+
+<text x="18" y="86" font-size="11.5" fill="#33415c">標普 500</text>
+<rect x="330" y="76" width="21" height="14" fill="#d6332e"/>
+<text x="359" y="87" font-size="11" font-weight="600" fill="#d6332e">+0.28%</text>
+
+<text x="18" y="112" font-size="11.5" fill="#33415c">那斯達克</text>
+<rect x="328" y="102" width="2" height="14" fill="#1a9d4b"/>
+<text x="338" y="113" font-size="11" font-weight="600" fill="#1a9d4b">-0.02%</text>
+
+<text x="18" y="138" font-size="11.5" fill="#33415c">費城半導體</text>
+<rect x="308" y="128" width="22" height="14" fill="#1a9d4b"/>
+<text x="262" y="139" font-size="11" font-weight="600" fill="#1a9d4b">-0.29%</text>
+
+<text x="18" y="164" font-size="11.5" fill="#33415c" font-weight="700">台積電 ADR</text>
+<rect x="330" y="154" width="87" height="14" fill="#d6332e"/>
+<text x="425" y="165" font-size="11" font-weight="700" fill="#d6332e">+1.16%</text>
+
+<text x="18" y="190" font-size="11.5" fill="#33415c">NVDA</text>
+<rect x="308" y="180" width="22" height="14" fill="#1a9d4b"/>
+<text x="262" y="191" font-size="11" font-weight="600" fill="#1a9d4b">-0.29%</text>
+
+<text x="18" y="216" font-size="11.5" fill="#33415c">Meta（財報前夕）</text>
+<rect x="208" y="206" width="122" height="14" fill="#1a9d4b"/>
+<text x="120" y="217" font-size="11" font-weight="600" fill="#1a9d4b">-1.63%（連五跌）</text>
+
+<text x="560" y="60" font-size="11" fill="#8a93a6">道瓊獨強、科技平盤 ——</text>
+<text x="560" y="78" font-size="11" fill="#8a93a6">資金自高估值科技股轉進</text>
+<text x="560" y="96" font-size="11" fill="#8a93a6">藍籌與防禦類股的輪動日。</text>
+<text x="560" y="128" font-size="11" fill="#8a93a6">VIX 17.31（-6.1%）</text>
+<text x="560" y="146" font-size="11" fill="#8a93a6">10Y 殖利率 5.117%（回落）</text>
+<text x="560" y="164" font-size="11" fill="#8a93a6">DXY 101.73（-0.25%）</text>
+<text x="560" y="182" font-size="11" fill="#8a93a6">黃金約 4,143 美元（-0.4%）</text>
+</svg>
+
+<h3>美股四大指數（10/20 收盤）</h3>
+<table class="grid">
+<tr><th>指數</th><th>收盤</th><th>漲跌</th><th>漲跌幅</th></tr>
+<tr><td>道瓊工業</td><td>52,495.88</td><td class="up">+529.85</td><td class="up">+1.02%</td></tr>
+<tr><td>標普 500</td><td>7,712.57</td><td class="up">+21.84</td><td class="up">+0.28%</td></tr>
+<tr><td>那斯達克</td><td>26,424.82</td><td class="down">-6.07</td><td class="down">-0.02%</td></tr>
+<tr><td>費城半導體</td><td>11,283.81</td><td class="down">-32.53</td><td class="down">-0.29%</td></tr>
+<tr><td>羅素 2000</td><td>2,773.42</td><td class="up">約 +45</td><td class="up">+1.65%</td></tr>
+</table>
+<p class="note">註：四大指數經 Yahoo Finance、TradingKey、美股收盤彙總三源交叉一致。羅素 2000 漲幅 +1.65% 為收盤彙總值，點數為回推約值。類股以醫療保健 +2.37%、房地產 +1.70%、公用事業 +1.26% 領漲，科技 -0.28% 墊底，11 大類股 10 漲 1 跌——漲勢來自「廣度修復」而非科技領軍。</p>
+
+<h3>台積電 ADR 與開盤影響估算</h3>
+<table class="kv">
+<tr><th>TSM ADR 收盤</th><td><b>425.08 美元</b>（<span class="up">+4.86 / +1.16%</span>），逆勢費半收紅</td></tr>
+<tr><th>ADR 折台股隱含價</th><td>約 <b>2,770 元</b>（匯率 32.58、1 ADR = 5 股），對台積電現貨 2,405 元溢價約 <b>+15.2%</b> <span class="tag">長期溢價，僅供參考</span></td></tr>
+<tr><th>台積電 10/20 收盤</th><td>2,405 元（<span class="down">-15 / -0.62%</span>）</td></tr>
+<tr><th>台積電期貨夜盤</th><td>2,425 元（<span class="up">+17</span>）<span class="tag">媒體值</span>，與 ADR 方向一致</td></tr>
+</table>
+
+<h3>國際宏觀焦點</h3>
+<ul>
+<li><b>油價戲劇性反轉（今日最大波動源）</b>：葉門青年運動宣稱擴大攻擊沙烏地能源與機場設施、波斯灣傳油輪遇襲，布蘭特盤中衝破 110 美元（高 111.97）、WTI 高見 110.48；其後美伊談判「即將達成協議」消息雖被指不正確、雙方仍持續協商，油價急速回吐——WTI 收 <b>101.79（-1.80%）</b>、布蘭特收 <b>108.79（-0.69%）</b>。盤中逾 8 美元的振幅意味著地緣消息仍可隨時再翻盤，塑化、航運、航空成本族群盤中波動加劇。</li>
+<li><b>殖利率與波動率同步回落</b>：10 年期殖利率自 5.136% 降至 <b>5.117%</b>，VIX 跌 6.1% 至 <b>17.31</b>，DXY 101.73 小跌。油價回落 → 通膨預期降溫 → 殖利率回落，是夜盤台指期強彈的總經底層邏輯。</li>
+<li><b>財報季首波驗證偏正向</b>：3M 獲利優於預期大漲 5.78% 領軍道瓊；通用汽車財報優於預期仍跌 6.84%（市場對「beat 的品質」要求升高）；SpaceX 盤後公布 AI 業務由虧轉盈，盤後股價漲逾 4%。<b>今晚盤後 Meta、特斯拉、IBM、德州儀器、Lam Research 集中發布</b>，是 AI 資本支出敘事的下一道關卡（詳第 8 節）。</li>
+<li><b>Fed 進入黑緘期，鷹派陰影未散</b>：10/27–28 FOMC 前官員停止發言；CME 定價 10 月按兵不動約 72%，但交易員對 <b>12 月升息 25bp</b> 的押注升溫。主席 Warsh 10/16 曼谷演說拒絕給出本月線索——高殖利率環境（10Y &gt; 5.1%）仍是台股外資提款的根源。</li>
+<li><b>亞股 10/20 普跌、韓股是台股昨日壓力源</b>：KOSPI 重挫 <b>-3.73%</b>（晶片股領跌）、日經 -1.30%、恒生 -1.32%、恒生科技 -1.52%。10/21 早盤亞股反彈：KOSPI 盤中約 +3.2%、日經約 +1.1%，區域情緒修復中。</li>
+<li><b>台灣基本面強力背書</b>：經濟部公布 9 月外銷訂單 <b>1,142.1 億美元，年增 62.4%</b>，連續 20 個月雙位數成長、連兩月破千億美元、再創單月新高，官方預估 Q4 接單優於 Q3。AI 需求是這波台股修正中沒有改變的基本面主線。</li>
+</ul>
+
+<h2>2. 台股現貨：連兩日回測季線有守，外資連十賣對決國家隊連十買</h2>
+
+<table class="kv">
+<tr><th>加權指數（10/20）</th><td><b>46,292.93</b>（<span class="down">-529.15 / -1.13%</span>），開 46,712.57 / 高 46,967.91 / 低 46,163.03</td></tr>
+<tr><th>成交值</th><td><b>8,029 億元</b>（證交所 FMTQIK 官方值），較前日 8,667 億續縮，為 9/29 以來低點——價跌量縮，觀望氣氛濃</td></tr>
+<tr><th>季線（60MA）</th><td>約 <b>46,113</b>，盤中低點 46,163 幾乎觸及、連兩日有守 <span class="tag">多空生命線</span></td></tr>
+<tr><th>櫃買指數</th><td>持續失守季線，中小型股須提防融資賣壓</td></tr>
+<tr><th>權值股（10/20）</th><td>台積電 <span class="down">-0.62%</span> 2,405｜鴻海 <span class="up">+0.84%</span> 241.5｜聯發科 <span class="down">-1.31%</span> 4,150｜廣達 <span class="up">+1.91%</span> 320.5</td></tr>
+</table>
+
+<h3>三大法人現貨籌碼（集中市場，10/20）</h3>
+<table class="grid">
+<tr><th>法人</th><th>買賣超（億元）</th><th>備註</th></tr>
+<tr><td>外資及陸資</td><td class="down"><b>-795.4</b></td><td><b>連續第 10 個交易日賣超，累計約 -8,380 億</b>；今年來累計提款約 2.12 兆元</td></tr>
+<tr><td>投信</td><td class="up"><b>+187.59</b></td><td>與八大公股行庫組成的「國家隊」連十買、累計約 1,922 億，今年來買超近 1.3 兆元創高</td></tr>
+<tr><td>自營商</td><td class="down"><b>-355.79</b></td><td>避險部位隨指數下跌調整</td></tr>
+<tr><td><b>三大法人合計</b></td><td class="down"><b>-963.6</b></td><td>&mdash;</td></tr>
+</table>
+<p class="note">外資買超前五：緯創、台玻、仁寶、中鋼、台塑化；賣超前五：友達、台新新光金、力積電、聯電、台塑。投信買超前五：中鋼、緯創、台泥、力積電、華新科。資券：融資減少 25.18 億至 6,381 億；融券增加 1.4 萬張至 21.59 萬張；外資借券賣出金額 325.28 億元。成交比重：電子 82.35%、傳產 14.74%、金融 2.91%。</p>
+
+<h3>盤面結構（10/20）</h3>
+<ul>
+<li><b>類股全面下跌</b>：金融 -2.36%、傳產 -1.64%、電子 -0.92%。相對強勢次族群：玻璃陶瓷 +2.17%、電腦及週邊 +1.34%、資訊服務 +0.42%。</li>
+<li><b>資金避風港</b>：軟板與光學鏡頭族群逆勢——台郡、律勝、今國光、聯一光、德宏、力致、意藍等，全場共 32 檔漲停；AI 權值與台塑四寶遭法人變現賣壓最重。</li>
+<li><b>技術面</b>：量縮黑 K 收盤守季線之上；KD、RSI 向下、MACD 綠柱擴大，整體弱勢整理但進入超跌區（統一證券）。法人共識：反彈要有像樣行情，<b>量能須放大至 1 兆元以上</b>；若跌破季線且量增，修正壓力延續。</li>
+<li><b>今日題材面</b>：TPCA Show 本週開展，聚焦高階 CCL、銅箔、玻纖布、超高層板、光模組用板、先進封裝六大領域——台光電、台燿、聯茂為 CCL 指標；封測雙雄日月光投控、京元電獲三家外資調升目標價；南亞獲瑞銀上調目標價至 390 元。IC 載板關鍵材料恐有約兩成供應缺口、特殊設備交期逾 30 個月（欣興董座 10/20 發言），為 PCB 族群的漲價敘事背書。</li>
+</ul>
+
+<h2>3. 台指期：夜盤強彈收復失土，但今日結算、空單仍握 8.9 萬口</h2>
+
+<h3>台指期夜盤（10/20 15:00 ~ 10/21 05:00，期交所官網全口徑）</h3>
+<table class="kv">
+<tr><th>TX 202610（今日結算）</th><td>開 46,490 / 高 47,098 / 低 46,136 / 收 <b>46,975</b>（<span class="up">+634 / +1.37%</span>），成交 30,400 口（單式口徑）</td></tr>
+<tr><th>TX 202611（新主力）</th><td>開 46,660 / 高 47,253 / 低 46,303 / 收 <b>47,154</b>（<span class="up">+644 / +1.38%</span>），成交 8,063 口</td></tr>
+<tr><th>電子期 TE 202610</th><td>收 <b>2,934.9</b>（<span class="up">+44.3 / +1.53%</span>）——電子領漲，強於大盤</td></tr>
+<tr><th>半導體 30 期 ZEF</th><td>收 <b>2,931.3</b>（<span class="up">+40.7 / +1.41%</span>）<span class="tag">期交所官網值</span></td></tr>
+<tr><th>10/20 日盤參照</th><td>TX 202610 收 46,384、結算價 46,341、未平倉僅剩 16,625 口；TX 202611 收 46,539、結算 46,510、未平倉 <b>107,546 口</b>——主力部位已轉倉至 11 月</td></tr>
+<tr><th>期現價差</th><td>夜盤 TX10 收盤對昨日現貨收盤為 <b class="up">+682 正價差</b>（對日盤結算價 +634）；惟現貨今日將跳空跟進，實際價差以開盤後為準</td></tr>
+</table>
+
+<h3>期貨籌碼（10/20）</h3>
+<table class="grid">
+<tr><th>項目</th><th>數值</th><th>判讀</th></tr>
+<tr><td>外資 TX 淨空單（未平倉）</td><td><b>-89,748 口</b>（較前日減少 1,397 口）</td><td class="down">仍在歷史高位區，短線籌碼偏空未改</td></tr>
+<tr><td>P/C Ratio（成交量）</td><td><b>129.06%</b>（前 94.54%，跳升 34.52 個百分點）</td><td>Put 成交 287,828 口 vs Call 223,022 口——結算前避險買盤大增，偏空保護需求強</td></tr>
+<tr><td>P/C Ratio（未平倉）</td><td><b>66.17%</b>（前 61.60%）</td><td>Put OI 91,724 口 / Call OI 138,622 口，中性偏防禦</td></tr>
+<tr><td>十大交易人（全月）</td><td>Top5 淨 <span class="up">+21,958</span>；Top10 淨 <span class="up">+4,903</span></td><td>全月口徑仍淨多，與外資近月空單形成「近空遠多」結構</td></tr>
+<tr><td>十大交易人（近月 202610）</td><td>Top10 淨 <span class="down">-4,132</span></td><td>結算月偏空，留意尾盤結算價攻防</td></tr>
+</table>
+
+<div class="callout callout-hl" style="background:#eef1f6;border:1px solid #d5dce8;">
+<b>早盤多空態度：<span class="badge badge-flat">中性偏多（反彈日）</span> &nbsp;台股／台指期綜合評分 <b>+2 / 100</b></b><br/>
+<span style="font-size:12.5px;">籌碼 -20 × 40% = -8.0 &nbsp;|&nbsp; 技術 +18 × 30% = +5.4 &nbsp;|&nbsp; 總經 +16 × 30% = +4.8</span><br/>
+<span style="font-size:12.5px;">拆解：籌碼面——外資現貨連十賣 8,380 億、期貨淨空 89,748 口、P/C 成交量比跳升至 129%，是明確的偏空結構（-20）；但投信與國家隊連十買 1,922 億、外資空單開始回補 1,397 口，給予下檔承接。技術面——連兩日守季線、進入超跌區、夜盤 +634 收復日 K 跌幅且電子期領漲（+18），惟 KD/MACD 未翻多、5 日線反壓在上。總經面——道瓊大漲、油價與殖利率回落、外銷訂單創高（+16），對沖 Fed 鷹派與台幣貶值壓力。<b>結論：今天是「反彈驗證日」——反彈的量能與外資轉倉後空單變化，決定這是反彈還是回升。</b></span>
+</div>
+
+<h3>今日關鍵關卡試算（主力 TX 202611，採夜盤 H=47,253 / L=46,303 / C=47,154）</h3>
+<p class="note">Pivot = (47,253 + 46,303 + 47,154) / 3 = <b>46,903</b>；區間 Range = 950 點（波動大，固定停損取 70 點，約 Range 的 7.4%）。</p>
+<table class="levels">
+<tr><td class="r2">壓力二 (R2)</td><td><code>47,853</code></td><td style="font-size:12px;color:#8a93a6;">Pivot + Range；軋空延伸區，須 Meta／特斯拉財報等級利多才可及</td></tr>
+<tr><td class="r1">壓力一 (R1)</td><td><code>47,504</code></td><td style="font-size:12px;color:#8a93a6;">夜盤高點 47,253 之上第一道整數反壓，空方主戰場上緣</td></tr>
+<tr><td class="pivot">強弱分界線 (Pivot)</td><td><code>46,903</code></td><td style="font-size:12px;color:#8a93a6;">夜盤收盤位於其上 251 點 → 開盤預設反彈基調，跌回其下則反彈失敗</td></tr>
+<tr><td class="s1">支撐一 (S1)</td><td><code>46,554</code></td><td style="font-size:12px;color:#8a93a6;">貼近夜盤中段與 11 月合約日盤結算 46,510，多方第一承接區</td></tr>
+<tr><td class="s2">支撐二 (S2)</td><td><code>45,953</code></td><td style="font-size:12px;color:#8a93a6;">Pivot - Range；跌至此代表夜盤漲幅全數回吐，下方即季線保衛戰</td></tr>
+</table>
+<p class="note">參照關卡——TX 202610（結算用，夜盤 H/L/C 試算）：Pivot 46,736｜R1 47,337｜R2 47,698｜S1 46,375｜S2 45,774。現貨（10/20 日 H/L/C 試算）：Pivot 46,475｜R1 46,786｜R2 47,280｜S1 45,981｜S2 45,670。</p>
+
+<div class="callout callout-ok">
+<b>午盤驗證（12:00 更新）</b>：加權指數盤中 <b>46,958.30（+665.37 / +1.44%）</b>，盤中高點 <b>47,254.93</b> 已逼近現貨 R2 47,280；台積電 2,430（+1.04%）、鴻海 249（+3.11%）、廣達 327.5（+2.18%）、台達電 1,630（+1.56%）、聯發科 4,165（+0.36%）。夜盤劇本兌現——但高點已進入「現貨 R2 + 期貨夜盤高點」雙重反壓帶，<b>午盤後重點從「會不會反彈」切換為「結算尾盤 13:15–13:45 的多空結算攻防」</b>，此時追價的風險報酬比快速惡化。
+</div>
+
+<h3>當日波段與試算進出場點位建議（TX 202611）</h3>
+<p class="note">今日評級，<b>多方為主策略、空方為輔（反壓區逆勢減碼）</b>。固定停損統一取 <b>70 點</b>。10 月合約部位請於結算前全數移轉或平倉，以下點位均以 11 月合約為準。</p>
+
+<div class="side side-long">
+<b></b>
+<ul>
+<li><b>建議進場區間</b>：<code>46,850 ~ 46,950</code>（Pivot 46,903 回測承接，分兩批）；或站穩 R1 <code>47,504</code> 後突破跟進（口數減半）</li>
+<li><b>嚴格停損價</b>：<code>46,833</code>（Pivot 下方 70 點）</li>
+<li><b>目標停利價</b>：第一目標 <code>47,504</code>（R1，約 +550~650 點）；延伸目標 <code>47,853</code>（R2）</li>
+<li><b>強制離場</b>：若現貨跌破季線 46,113 或外資盤中賣壓再擴大（現貨賣超 intraday 惡化），多單全數平倉；13:15 後不新建倉，結算波動不預測方向。</li>
+</ul>
+</div>
+
+<div class="side side-short">
+<b></b>
+<ul>
+<li><b>建議進場區間</b>：<code>47,504 ~ 47,853</code>（R1 至 R2 反壓帶，僅限輕倉試單）</li>
+<li><b>嚴格停損價</b>：<code>47,923</code>（R2 上方 70 點）</li>
+<li><b>目標停利價</b>：第一目標 <code>46,903</code>（Pivot）；延伸目標 <code>46,554</code>（S1）</li>
+<li><b>不宜進場情境</b>：若午盤後現貨站穩 47,280（現貨 R2）且量能放大至兆元等級，代表空單回補轉為追價買盤，空方策略作廢，避免在結算日與軋空對作。</li>
+</ul>
+</div>
+
+<h3>選擇權買方避險建議（11 月月選，履約價依關卡對齊）</h3>
+<table class="grid">
+<tr><th>持倉方向</th><th>避險工具</th><th>建議履約價</th><th>對齊邏輯</th></tr>
+<tr>
+<td>持有多單（Pivot 承接單）</td><td>買進 Put（TXO 11 月）</td><td><b>46,500</b></td>
+<td>貼近 S1 46,554 與多單停損 46,833 下方不遠處，確保急殺至支撐失守時 Put 已具內含價值。</td>
+</tr>
+<tr>
+<td>持有空單（R1~R2 空單）</td><td>買進 Call（TXO 11 月）</td><td><b>47,900</b></td>
+<td>設於 R2 47,853 <b>上方</b>，避免落在空單進場區與停損之間失效，專防結算軋空延伸。</td>
+</tr>
+</table>
+<p class="note"><b>成本提醒</b>：P/C 成交量比跳升至 129.06%，Put 端避險需求旺、權利金偏貴。單買 Put 成本高者，改用 Put 價差單（如買 46,500 Put / 賣 45,900 Put）降低時間價值耗損。若不使用選擇權，嚴格執行 70 點機械停損，結算日切勿凹單。</p>
+
+<h2 class="cn">4. A股：指數震盪、結構當道——政策呵護對沖權重拖累</h2>
+
+<h3>A股主要指數（10/20 收盤）</h3>
+<table class="grid">
+<tr><th>指數</th><th>收盤</th><th>漲跌幅</th><th>高 / 低</th><th>成交額</th></tr>
+<tr><td>上證指數</td><td><b>3,735.37</b></td><td class="up">+0.12%</td><td>3,740.07 / 3,702.44</td><td>6,999.7 億</td></tr>
+<tr><td>深證成指</td><td><b>11,801.29</b></td><td class="down">-0.14%</td><td>11,938.00 / 11,691.41</td><td>7,561.4 億</td></tr>
+<tr><td>創業板指</td><td><b>2,739.20</b></td><td class="down">-0.26%</td><td>2,790.12 / 2,706.41</td><td>約 3,745 億</td></tr>
+<tr><td>滬深 300</td><td><b>4,152.11</b></td><td class="down">-0.54%</td><td>4,175.21 / 4,113.14</td><td>&mdash;</td></tr>
+<tr><td>中證 500</td><td><b>6,841.44</b></td><td class="up">+0.60%</td><td>6,902.09 / 6,745.14</td><td>&mdash;</td></tr>
+<tr><td>科創 50</td><td><b>1,342.42</b></td><td class="up">+1.00%</td><td>1,355.20 / 1,309.87</td><td>&mdash;</td></tr>
+<tr><td>北證 50</td><td><b>982.87</b></td><td class="up">+3.88%</td><td>996.87 / 956.85</td><td>&mdash;</td></tr>
+</table>
+<p class="note">滬深兩市成交額約 <b>14,561 億元</b>（全市場含北交所約 14,715 億），較前一日小幅放量；全市場超 <b>3,700 只個股上漲</b>。盤面定性：小盤與科創風格占優、權重拖累指數——自動化設備、人形機器人、消費電子、半導體領漲（中芯國際 +2.29%），煤炭、保險、汽車整車墊底。滬指收復 5 日線，3,700 點整數關卡連日有承接買盤。</p>
+
+<h3>政策與資金面（A股專屬維度）</h3>
+<ul>
+<li><b>LPR 連續 17 個月不變</b>：10/20 公布 1 年期 3.0%、5 年期以上 3.5%。三季度 GDP 年增 <b>4.5%</b>（優於預期，前三季度 +4.6%），總量寬鬆不急，政策進入「結構工具發力、效果觀察期」。</li>
+<li><b>金融街論壇（10/19–20）定調利率框架改革</b>：央行行長潘功勝表示研究擇機將公開市場主要操作品種期限切換為<b>隔夜</b>，貸款定價由單一 LPR 轉向「LPR + DR001 雙錨」；央行另設<b>應對非銀機構大額贖回的流動性支持工具、擴圍常備借貸便利（SLF）</b>——流動性呵護態度明確，屬風險偏好的下檔保護。</li>
+<li><b>今日央行操作（10/21）</b>：7 天期逆回購操作量為零，改以 <b>800 億元隔夜逆回購</b>投放，扣除到期 560 億，單日淨投放 240 億元——新工具首度在日常操作中現身。人民幣兌美元中間價 6.7192，升值 8 個基點，匯率穩中偏強。</li>
+<li><b>產業政策催化</b>：國家數據集團 10/20 於雄安新區成立（國務院批准組建之央企，列名錄第 28 位，主責數據資源開發利用）；發改委發布首批 136 項標誌性重大應用場景清單，並研究制定擴大內需戰略實施方案；18 只主動 ETF 獲批，中長期增量資金在路上。</li>
+<li><b>兩融</b>：兩市融資餘額 24,433.56 億元（10/20），單日減少 21.4 億——槓桿資金小幅退潮，未見踩踏。</li>
+</ul>
+<p class="note"><b>口徑說明</b>：北向資金每日淨買額自 2024 年起停止披露，本報告不列單日北向淨額，改以成交額、兩融與主力板塊流向觀察外資與槓桿動向，避免引用非官方估算數字。</p>
+
+<div class="callout callout-hl" style="background:#eef1f6;border:1px solid #d5dce8;">
+<b>A股多空態度：<span class="badge badge-flat">中性偏多（結構行情）</span> &nbsp; 綜合評分 <b>+5 / 100</b></b><br/>
+<span style="font-size:12.5px;">政策／資金 +14 × 40% = +5.6 &nbsp;|&nbsp; 技術 +4 × 30% = +1.2 &nbsp;|&nbsp; 外部／總經 -6 × 30% = -1.8</span><br/>
+<span style="font-size:12.5px;">政策面有央行流動性工具與產業催化托底（+14）；技術面滬指守 3,700 與 5 日線、市場廣度佳，但權重指數（滬深 300 -0.54%）與創業板偏弱（+4）；外部面港股 -1.32%、金龍指數 -0.27% 與油價波動壓抑風險偏好（-6）。<b>定性：指數層面區間震盪，機會在政策題材與中小盤的結構輪動，不在權重。</b></span>
+</div>
+
+<h3>A股關鍵關卡試算（採 10/20 日 H/L/C，經典 Pivot）</h3>
+<table class="grid">
+<tr><th>指數</th><th>R2</th><th>R1</th><th>Pivot</th><th>S1</th><th>S2</th></tr>
+<tr><td><b>上證指數</b></td><td>3,764</td><td>3,749</td><td><b>3,726</b></td><td>3,712</td><td>3,688</td></tr>
+<tr><td><b>滬深 300</b>（IF 對應）</td><td>4,209</td><td>4,180</td><td><b>4,147</b></td><td>4,118</td><td>4,085</td></tr>
+<tr><td><b>創業板指</b></td><td>2,829</td><td>2,784</td><td><b>2,745</b></td><td>2,700</td><td>2,662</td></tr>
+<tr><td><b>科創 50</b></td><td>1,381</td><td>1,362</td><td><b>1,336</b></td><td>1,316</td><td>1,291</td></tr>
+<tr><td><b>深證成指</b></td><td>12,057</td><td>11,929</td><td><b>11,810</b></td><td>11,682</td><td>11,564</td></tr>
+</table>
+
+<div class="callout" style="background:#fdf0e9;border:1px solid #f0c878;">
+<b>午盤驗證（10/21 11:30）——指數衝高回落，關卡全數應驗，午後評分下修</b><br/>
+<span style="font-size:13px;">三大指數集體高開後翻綠：滬指午收 <b>3,723.95（-0.31%）</b>，盤中高 3,743.08 <b>未過 R1 3,749</b>、低 3,716.62 <b>守住 S1 3,712</b>、午收略低於 Pivot 3,726；深成指 11,764.97（-0.31%）；創業板指 <b>2,709.96（-1.07%）</b>，低點 2,699.39 一度微破 S1 2,700。滬深 300 午盤 4,125.22，盤中低 4,118.25 <b>精準回測 S1 4,118</b> 後反彈；科創 50 午盤 1,349.54 守在 Pivot 1,336 之上，仍是相對最強指數。<br/>
+拖累元兇：<b>寧德時代 10/20 晚公布三季報後早盤重挫逾 10%</b>（股價自 5 月歷史高點回落逾 50%），疊加碳酸鋰期貨跌逾 4%，電池產業鏈集體下挫。逆勢方向：數據要素（國家數據集團成立催化，南威軟件 4 天 3 板）、AI 漫劇、福建本地股；主力資金淨流入電子板塊 58.7 億元居首。半日成交 9,393 億元（較昨日同期 +59 億），上漲 2,857 家、44 家漲停、<b>0 家跌停</b>——指數弱、個股不弱。<br/>
+<b>午後修正：指數層面評分由 +5 下修至 -8（震盪偏弱）</b>，創業板在寧德止穩前以反彈減碼看待；結構題材（數據要素、半導體、機器人）維持輪動快打，指數部位嚴守 S1 失守即降倉的紀律。</span>
+</div>
+
+<h3>A股當日策略（指數部位以股指期貨／ETF 執行）</h3>
+<div class="side side-long">
+<b></b>
+<ul>
+<li>上證回測 <code>3,712（S1）~ 3,700 整數</code> 雙支撐區承接，跌破 3,688（S2）停損離場；滬深 300（IF）對應 S1 4,118 為今日已驗證的承接點。</li>
+<li>加碼條件：上證放量站穩 <code>3,749（R1）</code> 才追價，目標 R2 3,764 與整數 3,800。</li>
+<li>相對強勢優先：科創 50 守 Pivot 1,336 之上、半導體與數據要素題材股的回測買點，優於權重股。</li>
+</ul>
+</div>
+<div class="side side-short">
+<b></b>
+<ul>
+<li>創業板反彈至 <code>2,745（Pivot）~ 2,784（R1）</code> 為減碼區；寧德時代未止穩前不抄底電池鏈。</li>
+<li>轉弱確認：創業板收盤跌破 2,700、上證收盤跌破 3,688，指數部位降至防禦水位，轉向紅利與政策托底方向。</li>
+</ul>
+</div>
+
+<h2 class="pick">5. 台股作多選股專區（五維評選：籌碼・題材・財報・量能・指標）</h2>
+<p class="note">評選方法：以 10/20 收盤為基準、10/21 盤中走勢驗證。五維權重——籌碼 30%（法人買賣超、借券、量價背離）、熱門題材 20%（TPCA、法說、政策與產業催化）、財報 20%（獲利預告、目標價、營收動能）、量能 15%（量比、量縮量增結構）、指標 15%（均線、型態、相對強弱）。評級：<span class="pill pill-a">A 核心作多</span> <span class="pill pill-b">B 回測布局</span> <span class="pill pill-c">C 動能觀察</span>。進場區與停損為型態試算，非保證獲利；結算日尾盤波動大，新部位建議結算後再放大。</p>
+
+<table class="grid stocks">
+<tr><th style="width:11%">股票</th><th style="width:24%">題材 × 財報</th><th style="width:25%">籌碼 × 量能</th><th style="width:22%">指標 × 型態</th><th style="width:18%">參考進場區 / 停損 / 目標</th></tr>
+
+<tr>
+<td>緯創 3231<br/><span class="pill pill-a">A 核心</span><br/><span class="scorebar"><i style="width:88%"></i></span> <b>88</b></td>
+<td><b>AI 伺服器出貨主線</b>，電子五哥中法人共識度最高；Q3 財報（11 月）為獲利驗證點，市場聚焦 AI 伺服器營收占比續升。</td>
+<td><b>外資買超第 1 名 + 投信買超第 2 名</b>——大盤被外資連十賣的背景下，雙法人同向逆勢買進，是全場最乾淨的籌碼結構。10/20 量 82,100 張、量比 2.2。</td>
+<td>10/20 <span class="up">+5.00%</span> 收 189，一舉突破 176–187 盤整區；10/21 盤中續攻 199.5。相對大盤強弱居前。</td>
+<td>進場 <code>180~185</code> 回測<br/>停損 <code>175</code>（破 10/20 低點）<br/>目標 <code>199.5 → 215</code></td>
+</tr>
+
+<tr>
+<td>南亞 1303<br/><span class="pill pill-a">A 核心</span><br/><span class="scorebar"><i style="width:85%"></i></span> <b>85</b></td>
+<td><b>電子材料漲價鏈</b>（玻纖布、銅箔、環氧樹脂）＋ TPCA 題材；<b>瑞銀調升目標價至 390 元、麥格理 424 元</b>，以盤中 316 元計隱含上檔 +23%~+34%。</td>
+<td>連日成交逾 10 萬張居市場前列；10/20 量縮回檔（量比 0.84）守 295，10/21 盤中放量 <span class="up">+6.76%</span> 至 316，承接力道經市場驗證。</td>
+<td>10/19、10/20 於 295–298 築雙底；日振幅常逾 5%，須分批。站穩 319（10/20 高）轉強確認。</td>
+<td>進場 <code>305~316</code> 回測<br/>停損 <code>294</code>（破雙底）<br/>目標 <code>349 → 390</code></td>
+</tr>
+
+<tr>
+<td>台玻 1802<br/><span class="pill pill-b">B 布局</span><br/><span class="scorebar"><i style="width:80%"></i></span> <b>80</b></td>
+<td><b>玻纖布缺貨漲價</b>：載板關鍵材料傳出約兩成供應缺口，電子級玻纖布報價上行直接挹注毛利；玻璃陶瓷類股 10/20 +2.17% 為全場最強類股。</td>
+<td><b>外資買超第 2 名</b>；大盤量縮日逆勢 <span class="up">+2.12%</span> 收 67.4，成交 203,200 張、量比 1.5，人氣未退。</td>
+<td>沿短期均線墊高，10/21 盤中回測 65.6 有守；短線乖離偏大，只接回測不追高。</td>
+<td>進場 <code>63.5~65.5</code><br/>停損 <code>61.8</code><br/>目標 <code>70.6</code>（10/20 高）</td>
+</tr>
+
+<tr>
+<td>華新科 2492<br/><span class="pill pill-b">B 布局</span><br/><span class="scorebar"><i style="width:79%"></i></span> <b>79</b></td>
+<td><b>被動元件漲價循環</b>：同業接連調漲 MLCC／晶片電阻報價，AI 伺服器單機 MLCC 用量倍增，漲價效應將反映於 Q4 毛利。</td>
+<td><b>投信買超第 5 名</b>；10/19 -7.85% 洗盤後，10/20 爆量收紅——量 35,400 張、<b>量比 3.6</b>，為典型法人回補量。</td>
+<td>10/21 盤中攻至 405.5（+9.89%）確認動能，但已離支撐區遠，追價風險高，等回測。</td>
+<td>進場 <code>370~390</code> 回測<br/>停損 <code>355</code>（10/19 低點）<br/>目標 <code>426</code>（10/14 高）</td>
+</tr>
+
+<tr>
+<td>京元電 2449<br/><span class="pill pill-b">B 布局</span><br/><span class="scorebar"><i style="width:76%"></i></span> <b>76</b></td>
+<td><b>先進封測雙雄之一</b>：麥格理調升目標價，看好 Q4 起營收加速；法說季市場預期先進測試展望上修（對標日月光 LEAP 2027 財測調升）。</td>
+<td>瑞銀、廣發、麥格理三家外資同日送暖封測雙雄——研究端籌碼集體轉向，是中期布局訊號。回檔量縮（10/20 量比 0.4）。</td>
+<td>自 305 高點回檔逾 15% 後於 255–260 築底；10/21 盤中 <span class="up">+3.47%</span> 至 268.5 放量反彈。</td>
+<td>進場 <code>255~262</code><br/>停損 <code>248</code><br/>目標 <code>277.5 → 296.5</code></td>
+</tr>
+
+<tr>
+<td>台積電 2330<br/><span class="pill pill-b">B 核心配置</span><br/><span class="scorebar"><i style="width:75%"></i></span> <b>75</b></td>
+<td><b>先進製程與 AI 需求的最終承載者</b>：9 月外銷訂單創高、連 20 紅為需求背書；ADR 溢價 15.2%，海外定價顯著高於現貨。</td>
+<td>外資賣壓核心標的，但 10/20 成交量縮至 17,100 張、為波段低量——賣壓竭盡的籌碼訊號；國家隊與投信為主要承接方。</td>
+<td>2,395 連兩日為低點（10/19、10/20），短線鐵底區成形；站回 2,420 平台上緣才算轉強。</td>
+<td>進場 <code>2,395~2,420</code><br/>停損 <code>2,360</code><br/>目標 <code>2,490</code>（10 月平台）</td>
+</tr>
+
+<tr>
+<td>中鋼 2002<br/><span class="pill pill-b">B 防禦</span><br/><span class="scorebar"><i style="width:70%"></i></span> <b>70</b></td>
+<td>國家隊護盤核心權值；鋼價谷底盤整＋高殖利率題材，屬<b>防禦配置</b>而非成長股，結算週的資金停泊選擇。</td>
+<td><b>外資買超第 4 名 + 投信買超第 1 名</b>，雙法人同向且與大盤方向相反；量平價穩、波動顯著低於大盤。</td>
+<td>19.25–19.65 窄幅盤整逾一週，季線之上整理；突破 19.75（10/21 盤中高）才有波段。</td>
+<td>進場 <code>19.3~19.6</code><br/>停損 <code>18.9</code><br/>目標 <code>20.5</code></td>
+</tr>
+</table>
+
+<div class="callout callout-hl">
+<b>動能觀察名單（評級 C，不追價、只等回測量縮）</b>：<b>聯茂 6213</b>——CCL 主線股，但 10/20 量比 3.0 爆量收黑（籌碼分歧警示），10/21 盤中漲停 823，等回測 750–770 量縮再評估；<b>台郡 6269</b>——軟板強勢股，近 5 日 4 度漲停後 10/21 盤中爆量逾 12 萬張翻黑，籌碼過熱，觀察 82 元（10/16 收盤）支撐；<b>今國光 6209</b>——光學鏡頭，10/20 漲停 112 後 10/21 盤中衝 120 翻黑 -2.68%，同列過熱觀察。<b>紀律：選股以籌碼（法人同向）優先於題材熱度；所有部位先定停損再進場，單一個股不超過組合 15%。</b>
+</div>
+
+<h2 class="pick">6. A股作多選股專區（五維評選：籌碼・題材・財報・量能・指標）</h2>
+<p class="note">評選方法與台股專區一致（籌碼改看主力資金流向、連板梯隊與成交額變化；北向每日淨額已停披露不列入）。基準為 10/20 收盤、10/21 午盤驗證。評級：<span class="pill pill-a">A 核心作多</span> <span class="pill pill-b">B 回測布局</span> <span class="pill pill-c">C 動能觀察</span>。今晚 Meta／德儀財報為算力鏈的共同驗證點，財報前部位不宜滿倉。</p>
+
+<table class="grid stocks">
+<tr><th style="width:11%">股票</th><th style="width:24%">題材 × 財報</th><th style="width:25%">籌碼 × 量能</th><th style="width:22%">指標 × 型態</th><th style="width:18%">參考進場區 / 停損 / 目標</th></tr>
+
+<tr>
+<td>滬電股份 002463<br/><span class="pill pill-a">A 核心</span><br/><span class="scorebar"><i style="width:87%"></i></span> <b>87</b></td>
+<td><b>AI 算力 PCB 龍頭</b>：前三季淨利預告 <b>54.5–57 億元、年增 100.5%–109.7%</b>；1.6T 交換機 PCB 已批量出貨、224Gbps 產品小批量供貨，泰國廠扭虧——財報是全名單中最硬的一檔。</td>
+<td>成交額穩居 40 億級；10/20 量縮回檔（38 萬手，為 10/15 高量的一半），10/21 盤中 <span class="up">+3.64%</span> 至 115.05、半日量已逾昨日全天——回檔結束、資金回流的標準量價結構。</td>
+<td>106–119 區間整理逾一週，106.06（10/19 低）兩度測試有守；站穩 115 後挑戰前高。</td>
+<td>進場 <code>110~113</code> 回測<br/>停損 <code>105.5</code><br/>目標 <code>119.3 → 126</code></td>
+</tr>
+
+<tr>
+<td>亨通光電 600487<br/><span class="pill pill-a">A 核心</span><br/><span class="scorebar"><i style="width:85%"></i></span> <b>85</b></td>
+<td><b>光通信＋海纜</b>：前三季淨利預告同步翻倍成長；光纖光纜與海底電纜受惠算力互連與能源基建雙需求。</td>
+<td>10/19 <b>漲停爆量</b>（202 萬手，為常量的 2 倍、成交 98 億），10/20 續漲 +3.62% 成交 109.6 億居前；10/21 回檔 -0.75% 量能腰斬——主升段中的健康整理。</td>
+<td>自 45.5 底部兩日拉出逾 14%，突破近月平台；50 元（10/20 低點）為多方防線。</td>
+<td>進場 <code>50~51</code> 回測<br/>停損 <code>47.8</code><br/>目標 <code>53.2 → 55.5</code></td>
+</tr>
+
+<tr>
+<td>生益科技 600183<br/><span class="pill pill-b">B 布局</span><br/><span class="scorebar"><i style="width:81%"></i></span> <b>81</b></td>
+<td><b>覆銅板（CCL）龍頭</b>，對標台股台光電：前三季淨利預告翻倍；高速材料隨 AI 伺服器升規（M10→M11）量價齊升。</td>
+<td>連日成交 55–66 億為名單前列；10/20 高量不跌（56 萬手、-0.34%），10/21 盤中 <span class="up">+1.52%</span> 至 119.01、高見 124.18——大資金在上緣換手承接。</td>
+<td>111–121 區間上緣反覆測試，低點墊高（111.2 → 113.6）；放量突破 121 才算脫離整理。</td>
+<td>進場 <code>114~117</code><br/>停損 <code>110.5</code><br/>目標 <code>124 → 126.7</code></td>
+</tr>
+
+<tr>
+<td>中芯國際 688981<br/><span class="pill pill-b">B 布局</span><br/><span class="scorebar"><i style="width:80%"></i></span> <b>80</b></td>
+<td><b>半導體自主可控核心</b>，科創 50 領漲權重；先進製程產能利用率與國產替代訂單為三季報看點，工信部新一代智能製造政策催化在途。</td>
+<td>10/20 <span class="up">+2.29%</span> 收在全日最高 101.98，成交 30 億；10/21 隨創業板回檔 -1.34%，半日量僅 15 萬手（昨日一半）——量縮回測。</td>
+<td>自 109 高點回落後於 97.7–102 築底，收盤價站回 100 整數；科創 50 為今日相對最強指數，具 beta 順風。</td>
+<td>進場 <code>98.5~100</code><br/>停損 <code>96.5</code>（破前低）<br/>目標 <code>106 → 109.2</code></td>
+</tr>
+
+<tr>
+<td>工業富聯 601138<br/><span class="pill pill-b">B 布局</span><br/><span class="scorebar"><i style="width:76%"></i></span> <b>76</b></td>
+<td><b>AI 伺服器代工龍頭</b>（對標台股緯創／鴻海）：算力鏈權重股，Q3 財報驗證 AI 伺服器出貨放量，兼具指數權重與題材雙屬性。</td>
+<td>10/20 <span class="up">+2.22%</span> 成交 43 億、量增至 90 萬手（前日 70 萬手）；10/21 盤中續穩 +1.50%——機構型資金的慢牛量價。</td>
+<td>46.65–47.0 雙底（10/15、10/19）後收復 48–49 平台；上方 52–53 為 10 月中套牢區。</td>
+<td>進場 <code>47.7~48.8</code><br/>停損 <code>46.4</code><br/>目標 <code>52.3 → 53.3</code></td>
+</tr>
+
+<tr>
+<td>太極股份 002368<br/><span class="pill pill-b">B 題材</span><br/><span class="scorebar"><i style="width:74%"></i></span> <b>74</b></td>
+<td><b>數據要素＋信創核心</b>：國家數據集團 10/20 成立為直接催化（央企數據資產運營），同族群南威軟件 4 天 3 板、海量數據今早漲停，梯隊完整。</td>
+<td>10/19 漲停、10/20 <b>爆量 4 倍</b>（43 萬手 vs 常量約 8 萬手）收 +4.63%，10/21 再漲停 14.67、成交 7 億——量價齊揚但三日累漲逾 26%，只接回測。</td>
+<td>自 11.45 底部 V 型拉升，型態動能最強、乖離也最大；回測 10/20 收盤區 13.0–13.4 為合理買點。</td>
+<td>進場 <code>13.0~13.4</code> 回測<br/>停損 <code>12.5</code><br/>目標 <code>16.0</code>（量度漲幅）</td>
+</tr>
+</table>
+
+<div class="callout callout-hl">
+<b>動能觀察名單（評級 C）</b>：<b>潤建股份 002929</b>（算力＋數據要素，三連板、10/21 漲停 56.14，換手劇烈）；<b>大業股份 603278</b>（人形機器人，四連板且連續一字板，籌碼鎖定但無法正常成交，追高風險極大）；<b>恒玄科技 688608</b>（端側 AI，10/20 科創板 20% 漲停 V 型反轉、日振幅 21%，等回測 100 元）；<b>移遠通信 603236</b>（物聯網模組，兩日累漲逾 20%、量爆 44 萬手，過熱觀察）。<br/>
+<b>迴避名單</b>：<b>寧德時代 300750</b>——三季報後 10/21 盤中 <span class="down">-10.32%</span>、成交 216 億放量破位，自 5 月高點回落逾 50%，趨勢未止穩前不接刀；<b>中際旭創 300308／新易盛 300502</b>——光模組高價股連日走弱，與美股科技分歧共振，等止穩量縮再評估；<b>北方華創 002371</b>——半導體設備連跌未見止穩訊號。
+</div>
+
+<h2>7. 跨市場連動與今日觀盤時間軸</h2>
+<ul>
+<li><b>半導體三角傳導</b>：費半 -0.29%（弱）vs 台積電 ADR +1.16%（強）vs A股半導體 10/20 領漲、今早元件／半導體開盤領漲——三地訊號不一致時，<b>以台積電現貨與電子期為準</b>：電子期夜盤 +1.53% 領漲大盤，是今日台股反彈品質的第一個確認訊號。</li>
+<li><b>匯率背離</b>：新台幣仍在 32.5–32.6 高檔（外資匯出壓力未解）vs 人民幣中間價穩中升值——資金面對台股的壓力顯著大於 A股，這是台股評分（+2）低於 A股盤前評分（+5）的主因之一。</li>
+<li><b>油價是兩岸共同的盤中變數</b>：布蘭特盤中振幅逾 6 美元。台塑四寶昨日已遭外資賣壓（台塑、台塑化在賣超／買超名單兩端出現，顯示多空分歧），A股煤炭、能源同步受牽動；地緣頭條出現時先看 WTI 是否站回 105 美元上方再判斷方向。</li>
+<li><b>今晚美股財報是明日兩岸開盤的共同引信</b>：Meta 的 AI 資本支出指引、德州儀器的工業／車用需求展望，直接對應台股 AI 供應鏈與 A股算力硬件（PCB、光模組、高速互連）——滬電股份等 A股算力鏈已預告前三季獲利翻倍，今晚財報若指引保守，兩岸 AI 鏈明日同步承壓。</li>
+</ul>
+<table class="grid">
+<tr><th style="width:16%">時間（台北）</th><th>事件</th><th>觀察點</th></tr>
+<tr><td>08:45–09:00</td><td>台指期、台股開盤</td><td>TX11 是否守 Pivot 46,903；現貨開盤量能</td></tr>
+<tr><td>09:30</td><td>A股開盤</td><td>寧德時代開盤跌幅與創業板 S1 2,700 攻防（已驗證：衝高回落）</td></tr>
+<tr><td>11:30</td><td>A股午收</td><td>半日成交與漲跌家數（已驗證：9,393 億、指數翻綠）</td></tr>
+<tr><td>13:15–13:45</td><td><b>台股尾盤 + 台指期 10 月合約結算</b></td><td>最終結算價取標的指數最後 30 分鐘平均——急拉急殺高發時段，不留裸部位</td></tr>
+<tr><td>15:00</td><td>A股收盤</td><td>上證 S1 3,712、創業板 2,700 收盤攻防結果</td></tr>
+<tr><td>22:30</td><td>美國 EIA 原油庫存</td><td>油價在地緣溢價後的供需驗證</td></tr>
+<tr><td>10/22 04:00 後</td><td>Meta、特斯拉、IBM、德儀、Lam 財報</td><td>AI 資本支出與半導體需求指引，決定明日兩岸科技股方向</td></tr>
+</table>
+
+<h2>8. 今日與本週財經事件前瞻</h2>
+<table class="grid">
+<tr><th style="width:14%">日期</th><th style="width:40%">事件／數據</th><th>對三市場影響評估</th></tr>
+<tr><td><b>10/21（三）</b></td><td><b>台指期 10 月合約結算（13:45）</b>；TPCA Show 開展週；央行 800 億隔夜逆回購（已執行）；美股盤後 Meta／特斯拉／IBM／德州儀器／Lam Research 財報；EIA 原油庫存 22:30</td><td><b>高</b>。結算波動 + 財報夜，兩岸科技股的持倉都應在今日完成風險調整。</td></tr>
+<tr><td>10/22（四）</td><td>美國初領失業金 20:30；西部數據（WDC）盤後財報；洛克希德馬丁、黑石、寶僑盤前財報</td><td>中。失業金為 10/27–28 FOMC 前的勞動市場前哨；WDC 驗證儲存需求與 AI 資料中心資本支出。</td></tr>
+<tr><td>10/23（五）</td><td>美國 10 月 S&amp;P Global 製造業／服務業 PMI 初值 21:45；密西根大學消費者信心終值（初值 46.3，一年期通膨預期 4.7%）</td><td><b>中－高</b>。PMI 價格分項若續升，將強化 12 月升息定價，壓抑週末前持倉意願。</td></tr>
+<tr><td>10/27–28</td><td><b>FOMC 利率決議</b>（目前黑緘期）</td><td><b>本月最高權重</b>。市場定價 10 月不動約 72%，焦點在 12 月是否升息的指引——外資何時結束對台股的連續提款，與此直接相關。</td></tr>
+</table>
+<div class="callout callout-hl">
+<b>本週操作節奏</b>：台股——結算日（10/21）以「反彈驗證、量能與外資轉倉空單」為觀察核心，反彈無量（&lt;1 兆）則逢高降槓桿；10/22 凌晨財報落地後再定 AI 鏈方向。A股——指數守 S1、題材做輪動，創業板等寧德時代止穩訊號；兩市共同紀律：<b>FOMC 前不放大槓桿</b>。
+</div>
+
+<h2>9. 資料來源與口徑說明</h2>
+<table class="grid">
+<tr><th>資料類別</th><th>來源</th><th>備註</th></tr>
+<tr><td>台指期夜盤／日盤（全口徑）</td><td>台灣期交所官網 futDailyMarketReport（queryType=2）</td><td>TX／TE／ZEF 10/20 日盤與 10/20–21 夜盤皆為官網值；個別媒體引述之半導體 30 期數字與官網不符，已採官網 2,931.3 <span class="tag">[TAIFEX]</span></td></tr>
+<tr><td>P/C Ratio、大額交易人</td><td>台灣期交所 OpenAPI（PutCallRatio、OpenInterestOfLargeTradersFutures）</td><td>10/20 最新日 <span class="tag">[TAIFEX]</span></td></tr>
+<tr><td>外資期貨淨空單</td><td>工商時報、中國時報（引述兆豐期貨）</td><td>-89,748 口、單日減少 1,397 口，兩源一致</td></tr>
+<tr><td>台股現貨與三大法人</td><td>證交所 FMTQIK（成交值 8,029 億）；經濟日報／統一證券盤前、Goodinfo</td><td>加權 46,292.93（-529.15）；三大法人 -963.6 億，兩源一致</td></tr>
+<tr><td>美股指數與個股</td><td>Yahoo Finance；TradingKey；收盤彙總</td><td>四大指數、TSM ADR、VIX、殖利率、DXY、油金期貨三源交叉</td></tr>
+<tr><td>A股指數 OHLC／成交額</td><td>東方財富 K 線 API；新浪財經收評／午評；香港商報</td><td>10/20 收盤與 10/21 午盤兩源一致；創業板成交額各源小幅差異，採約值</td></tr>
+<tr><td>中國政策與資金</td><td>澎湃新聞（LPR、金融街論壇）；新浪財經（央行操作、兩融、午評）</td><td>LPR 3.0%／3.5%；10/21 隔夜逆回購 800 億</td></tr>
+<tr><td>財經行事曆</td><td>新浪財經、TradingKey 一周前瞻</td><td>美股財報與數據時程</td></tr>
+<tr><td>選股專區個股行情</td><td>Yahoo Finance（台股 OHLC／成交量）；東方財富 K 線 API（A股 OHLC／成交額）</td><td>基準日 10/20 收盤，量比以近 5 日均量計算；10/21 為盤中值。法人買賣超名次與目標價出處：經濟日報／統一證券、工商時報、中國時報；A股獲利預告：公司公告（新浪財經彙整）</td></tr>
+</table>
+<p class="note"><b>數據管線狀態</b>：本報告於 2026-10-21 12:00（台北）編製。台指期與選擇權數據取自期交所官方管道並完成全口徑核對；A股 10/21 午盤與台股 10/21 盤中值為編製時點之盤中快照，收盤後可能變動。所有試算關卡為機械式 Pivot 計算，公式與範本一致。</p>
+
+<h2>&#9888; 免責聲明</h2>
+<div class="disclaimer">
+本報告僅供參考，不構成投資建議。期貨與槓桿交易具高風險，過往績效不代表未來表現。投資人應審慎評估自身財務狀況與風險承受能力，自負盈虧。<br/><br/>
+報告中所列進出場點位、停損與停利價格均為依夜盤／前日數據之機械式試算結果，實際盤中價格波動可能大幅偏離試算值。<b>今日適逢台指期結算且外資期貨淨空單處於高位，尾盤波動可能顯著高於常態；A股創業板受權重股財報衝擊，務必嚴格執行停損紀律，切勿凹單。</b>今晚美股科技財報與 10/27–28 FOMC 為本週關鍵變數，公布前應主動控制槓桿與倉位。
+</div>
+
+<footer>
+三市場早盤日報 &middot; 2026-10-21（週三）&middot; 台股評分 +2｜A股盤前 +5 → 午盤修正 -8<br/>
+TX 202611：Pivot 46,903 &middot; R1 47,504 &middot; R2 47,853 &middot; S1 46,554 &middot; S2 45,953 &middot; 固定停損 70 點<br/>
+上證指數：Pivot 3,726 &middot; R1 3,749 &middot; R2 3,764 &middot; S1 3,712 &middot; S2 3,688
+</footer>
+</div>
+</body>
+</html>
