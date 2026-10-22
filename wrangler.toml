@@ -1,0 +1,5 @@
+name = "ai-trading-farmer"
+compatibility_date = "2025-01-15"
+
+[assets]
+directory = "."
