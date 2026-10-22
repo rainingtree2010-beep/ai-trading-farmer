@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="zh-Hant-TW">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AI 寫的交易策略實測，5 個全滅：回測健檢怎麼做｜AI 交易智耕農</title>
+<meta name="description" content="讓 AI 寫 5 個經典交易策略，用統一條件在台指期上回測——紙面獲利為什麼不能信？逐一健檢的結果與 3 個自保技巧，全部攤開給你看。">
+<link rel="stylesheet" href="../styles.css">
+<link rel="icon" href="../assets/logo.png">
+</head>
+<body>
+<header class="site-header">
+  <div class="wrap header-inner">
+    <a class="brand" href="../index.html"><img src="../assets/logo.png" alt="AI 交易智耕農" width="34" height="34">AI 交易智耕農</a>
+    <nav class="main-nav">
+      <a href="../index.html#video">教學影片</a>
+      <a href="../index.html#method">八步法</a>
+      <a href="../index.html#indicators">免費指標</a>
+      <a href="../index.html#faq">FAQ</a>
+    </nav>
+  </div>
+</header>
+
+<main class="article-main">
+  <div class="article-hero">
+    <p class="eyebrow">教學文章</p>
+    <h1>AI 寫的交易策略實測，5 個全滅：紙面獲利為什麼不能信</h1>
+    <p class="article-meta">發佈於 2026 年 10 月 16 日・對應影片長度 6 分 07 秒</p>
+  </div>
+
+  <div class="video-frame">
+    <iframe src="https://www.youtube.com/embed/ZgA1xS8mGtY" title="AI 寫的交易策略實測，5 個全滅！我學到的 3 個自保技巧" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen referrerpolicy="strict-origin-when-cross-origin"></iframe>
+  </div>
+
+  <div class="article-body">
+    <p>讓 AI 寫交易策略，現在只要幾分鐘。但寫得出來，不代表賺得到錢。這篇文章記錄一次完整的實測：請 AI 寫出 5 個最經典的交易策略，全部放上 TradingView 用<strong>同一套回測條件</strong>跑一遍，再逐一做「健檢」——檢查每一支的獲利到底是實力，還是運氣。結論先說：5 支全滅。而全滅的原因，比結果本身更值得看。</p>
+
+    <h2>先把規則講清楚：統一回測條件</h2>
+    <p>回測最容易造假的地方，就是每支策略用不同條件、挑最好看的講。這次全部統一：</p>
+    <ul>
+      <li><strong>標的</strong>：台指期日線</li>
+      <li><strong>期間</strong>：2024 年 1 月 1 日至 2026 年 10 月 1 日</li>
+      <li><strong>資金</strong>：本金 100 萬、每次 1 口、不加碼</li>
+      <li><strong>成本</strong>：手續費來回 200 元，訊號以當根 K 線收盤價成交</li>
+    </ul>
+
+    <h2>受測的 5 個策略</h2>
+    <table>
+      <tr><th>策略</th><th>邏輯</th><th>紙面結果</th></tr>
+      <tr><td>S1 雙均線交叉</td><td>20/60 均線上穿做多、跌破反手做空</td><td>獲利（見下方健檢）</td></tr>
+      <tr><td>S2 RSI 反轉</td><td>RSI(14) 低於 30 做多、高於 70 平倉</td><td>獲利（見下方健檢）</td></tr>
+      <tr><td>S3 MACD 柱狀翻轉</td><td>MACD(12,26,9) 柱狀負翻正做多、正翻負反手空</td><td>5 支中唯一紙面虧損</td></tr>
+      <tr><td>S4 布林通道突破</td><td>站上上軌做多、跌破下軌平倉</td><td>獲利（見下方健檢）</td></tr>
+      <tr><td>S5 三層複合</td><td>SMA60 趨勢過濾＋ATR 波動確認＋均量確認</td><td>原版虧損；優化版見下方</td></tr>
+    </table>
+    <p>只看紙面，5 支裡有 4 支是賺的，看起來 AI 寫策略好像真的行。但魔鬼在健檢裡。</p>
+
+    <figure class="figure">
+      <div class="fig-title">紙面獲利 vs 健檢真相（統一回測條件）</div>
+      <div class="bars">
+        <div class="bar-row"><span>S1 雙均線・紙面</span><div class="bar-track"><div class="bar-fill" style="width:100%"></div></div><span class="bar-note">+238 萬・僅 5 筆</span></div>
+        <div class="bar-row"><span>S4 布林突破・紙面</span><div class="bar-track"><div class="bar-fill" style="width:42%"></div></div><span class="bar-note">+100 萬・僅 4 筆</span></div>
+        <div class="bar-row"><span>S5 複合・優化版</span><div class="bar-track"><div class="bar-fill" style="width:28%"></div></div><span class="bar-note">+66.7 萬・勝率 11%</span></div>
+        <div class="bar-row"><span>S2 RSI・統一條件重測</span><div class="bar-track"><div class="bar-fill neg" style="width:7%"></div></div><span class="bar-note">−15.6 萬</span></div>
+        <div class="bar-row"><span>S5 複合・原版</span><div class="bar-track"><div class="bar-fill neg" style="width:41%"></div></div><span class="bar-note">−96.7 萬</span></div>
+      </div>
+      <figcaption class="fig-cap">金色長條看起來很賺，但 S1、S4 的獲利全靠 4–5 筆幸運單；條件一拉齊，S2 立刻翻負。這就是只看總淨利會被騙的原因。</figcaption>
+    </figure>
+    <h2>健檢結果：獲利幾乎全靠「幸運單」</h2>
+    <h3>S1、S4：賺很多，筆數少得可憐</h3>
+    <p>S1 紙面獲利約 238 萬——但整個回測期間<strong>只交易了 5 筆</strong>。S4 獲利約 100 萬，也只有 <strong>4 筆</strong>。換句話說，這些「獲利」是少數幾筆剛好搭上大行情的幸運單撐起來的，不是策略穩定產出的結果。樣本數這麼少，換一段行情、換一個市場，結論隨時翻盤。</p>
+    <h3>S2：換上統一條件，立刻現形</h3>
+    <p>S2 的 RSI 反轉在它自己的設定下看似可行，但放進與其他策略<strong>完全相同的統一條件</strong>重測，結果是虧損約 15.6 萬。條件一拉齊，幻覺就消失了。</p>
+    <h3>S5：優化救得回數字，救不回勝率</h3>
+    <p>S5 原版虧損約 96.7 萬。針對它做參數優化後，數字翻正為獲利約 66.7 萬——但<strong>勝率只有 11%</strong>。十次出手錯九次，靠極少數大賺單cover全部虧損，這種曲線沒有幾個人抱得住，實盤心理壓力會先把你洗出場。</p>
+
+    <h2>結論：5 支全滅，問題不在 AI</h2>
+    <p>這 5 支策略的寫法都是「教科書版」——標準參數、沒有偷工。問題出在：經典策略的公開邏輯早就被市場消化，而回測報表會用「總淨利」這個單一數字，掩蓋筆數不足、獲利集中、條件不一致這些真正的風險。AI 能幫你把策略寫出來，但<strong>判斷策略能不能用，仍然是交易者自己的功課</strong>。</p>
+
+    <div class="takeaway">
+      <h3>3 個自保技巧（本篇重點）</h3>
+      <ul>
+        <li><strong>先看健檢報告，再看淨利</strong>：交易筆數、獲利是否集中在少數幾筆、最大回撤——這三項不合格，淨利再漂亮都不算數。</li>
+        <li><strong>停損優先於進場</strong>：先想好錯了怎麼退，再想對了賺多少。沒有停損設計的策略，回測再好都是未爆彈。</li>
+        <li><strong>統一回測條件</strong>：所有策略用同一標的、同一期間、同一成本比較，才不會被「各自表述」的數字騙。</li>
+      </ul>
+    </div>
+
+    <p>想看完整的回測過程與每一支的儀表板數字，影片裡有全程實測。頻道接下來會繼續用同樣的健檢標準，實測更多你可能正在用的策略與指標。</p>
+  </div>
+
+  <div class="cta-row">
+    <a class="btn btn-gold" href="https://youtu.be/ZgA1xS8mGtY" target="_blank" rel="noopener">在 YouTube 看完整實測</a>
+    <a class="btn btn-outline" href="../index.html#indicators">領取免費指標</a>
+    <a class="btn btn-outline" href="../index.html#method">看八步法拆解</a>
+  </div>
+
+  <div class="disclaimer">
+    <strong>免責聲明</strong>
+    <p>本文為教學分享與回測方法示範，不構成任何投資建議。回測結果不代表未來績效，投資有風險，請自行評估。</p>
+  </div>
+
+  <a class="back-link" href="../index.html#video">← 回到影片與文章列表</a>
+</main>
+
+<footer class="site-footer">
+  <div class="wrap footer-inner">
+    <p>AI 交易智耕農 — 用量化邏輯，戰勝市場焦慮。</p>
+    <p class="footer-note">本站內容為教學分享，不構成任何投資建議。投資有風險，請自行評估。</p>
+  </div>
+</footer>
+</body>
+</html>

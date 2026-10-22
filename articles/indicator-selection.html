@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="zh-Hant-TW">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>指標訊號打架怎麼辦？三層過濾法挑出你的真命指標｜AI 交易智耕農</title>
+<meta name="description" content="圖表掛滿指標、訊號互相打架，是「分析癱瘓」。用三層過濾法（未來函數、文檔、簡潔度）＋三屏法＋多週期 MTF，挑出真正適合你的 TradingView 指標。">
+<link rel="stylesheet" href="../styles.css">
+<link rel="icon" href="../assets/logo.png">
+</head>
+<body>
+<header class="site-header">
+  <div class="wrap header-inner">
+    <a class="brand" href="../index.html"><img src="../assets/logo.png" alt="AI 交易智耕農" width="34" height="34">AI 交易智耕農</a>
+    <nav class="main-nav">
+      <a href="../index.html#video">教學影片</a>
+      <a href="../index.html#method">八步法</a>
+      <a href="../index.html#indicators">免費指標</a>
+      <a href="../index.html#faq">FAQ</a>
+    </nav>
+  </div>
+</header>
+
+<main class="article-main">
+  <div class="article-hero">
+    <p class="eyebrow">教學文章</p>
+    <h1>指標訊號打架怎麼辦？用「三層過濾法」挑出你的真命指標</h1>
+    <p class="article-meta">發佈於 2026 年 5 月 20 日・對應影片長度 10 分 37 秒</p>
+  </div>
+
+  <div class="video-frame">
+    <iframe src="https://www.youtube.com/embed/mroxC_uCmHw" title="破解指標訊號打架！這套大師級的「交易邏輯」，幫你找出真正賺錢的關鍵指標！" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen referrerpolicy="strict-origin-when-cross-origin"></iframe>
+  </div>
+
+  <div class="article-body">
+    <p>你的 TradingView 圖表上同時掛了幾個指標？如果超過三個，而且常常出現 A 指標叫你買、B 指標叫你賣的情況，你已經陷入「分析癱瘓」了。TradingView 的社群腳本庫有十幾萬個工具，但<strong>指標越多，不代表勝率越高</strong>——大多數職業交易者的圖表上只有 1 到 3 個指標。這篇文章用一套完整的邏輯，帶你從定義風格開始，挑出真正適合自己的指標。</p>
+
+    <h2>第一步：先定義風格，再挑工具</h2>
+    <p>方向錯了，工具再神也沒用。挑指標之前，先認清自己是哪一型交易者：</p>
+    <ul>
+      <li><strong>趨勢交易</strong>：需要移動平均線（MA/EMA）、SuperTrend、雲圖這類跟著趨勢走的工具。</li>
+      <li><strong>震盪／均值回歸</strong>：看 RSI、隨機指標、布林通道，抓超買超賣的反轉。</li>
+      <li><strong>動量交易</strong>：關注 MACD、ADX、成交量分布，確認力道。</li>
+    </ul>
+    <p>最致命的錯位是<strong>在趨勢盤用震盪指標</strong>。舉例：比特幣走主升段時，RSI 可以長時間停在 80 以上的超買區，價格卻繼續狂飆——這時看著 RSI 超買去做空，只會被嘎爆。趨勢行情裡，你唯一該盯的是價格有沒有跌破你的趨勢線（例如均線），而不是震盪指標的讀數。</p>
+    <p>風格定好之後，到 TradingView 社群腳本從「編輯精選」「最熱門」裡找按讚數高的<strong>開源</strong>腳本：點開名稱旁的 {} 圖示看原始碼。<strong>看不懂邏輯的指標，不要用。</strong>看不懂程式碼沒關係——把原始碼貼給 AI（例如 Gemini），請它說明這個指標的組成、屬於趨勢型還是震盪型、如何判斷進出場與參數調整建議，你就能在十分鐘內搞懂一個指標的核心。</p>
+    <p>選定後也別急著上實盤：先用 TradingView 內建模擬交易，<strong>手動回測 100 筆以上</strong>，熟悉它的訊號節奏，也驗證它到底適不適合你。</p>
+
+    <figure class="figure">
+      <div class="fig-title">挑指標的正確流程</div>
+      <div class="flow">
+        <div class="step"><b>1 定義風格</b>趨勢／震盪／動量</div><span class="arrow">→</span>
+        <div class="step"><b>2 找開源腳本</b>編輯精選・熱門</div><span class="arrow">→</span>
+        <div class="step"><b>3 三層過濾</b>未來函數／文檔／簡潔</div><span class="arrow">→</span>
+        <div class="step"><b>4 模擬回測</b>手動 100 筆以上</div><span class="arrow">→</span>
+        <div class="step"><b>5 才上實盤</b>小資金驗證</div>
+      </div>
+      <figcaption class="fig-cap">順序反了，就是先買工具再找用途——大多數人的圖表就是這樣髒掉的。</figcaption>
+    </figure>
+    <h2>第二步：三層過濾法，驗證指標的含金量</h2>
+    <figure class="figure">
+      <div class="fig-title">三層過濾法：一層比一層嚴</div>
+      <div class="funnel">
+        <div class="layer"><b>第一層・未來函數</b>——重播逐根檢查，訊號會不會消失或移動</div>
+        <div class="layer"><b>第二層・文檔完整</b>——參數、邏輯、場景有沒有寫清楚</div>
+        <div class="layer"><b>第三層・視覺簡潔</b>——不擋 K 線，價格永遠是主角</div>
+      </div>
+      <figcaption class="fig-cap">三層全過的指標才留下；大多數「神指標」倒在第一層。</figcaption>
+    </figure>
+    <h3>第一層：未來函數（Repainting）——新手最大的坑</h3>
+    <p>有些指標會「偷看未來的價格」回頭修正過去的訊號。最典型的就是 ZigZag 類指標：回測圖上每一個轉折都完美標在最高點和最低點，但即時跑起來，價格一破底，那個「最低點」標記會偷偷跟著往下移。回測百戰百勝、實盤早就停損出場——說的就是這種。用 TradingView 的重播功能逐根 K 線跑一次，訊號會不會消失或移動，立刻現形。</p>
+    <h3>第二層：文檔說明是否完整</h3>
+    <p>優質的指標作者會寫清楚參數意義、計算邏輯與建議使用場景。只有名字、沒有說明的指標，通常不建議使用——作者自己都不願意解釋的邏輯，你沒理由拿真錢去試。</p>
+    <h3>第三層：視覺簡潔度</h3>
+    <p>指標是輔助，不是主角。如果一個指標把 K 線實體與影線擋得水洩不通，讓你看不清價格本身，它就不適合你。價格才是第一資訊，指標永遠排在後面。</p>
+
+    <h2>加碼：三屏看盤法</h2>
+    <p>通過過濾的指標，怎麼組裝成一套看盤系統？用「三屏法」分配角色：</p>
+    <table>
+      <tr><th>畫面</th><th>角色</th><th>放什麼指標</th></tr>
+      <tr><td>大週期（交易週期的 3–5 倍）</td><td>導航儀：判斷趨勢方向</td><td>趨勢型指標</td></tr>
+      <tr><td>交易週期</td><td>啟動機：主要進出場依據</td><td>擺盪或動量指標</td></tr>
+      <tr><td>小週期</td><td>顯微鏡：微調進場點</td><td>裸 K 或成交量指標</td></tr>
+    </table>
+    <p>核心觀念：<strong>指標沒有好壞，只有週期錯位。</strong>在震盪週期用趨勢指標會被來回洗盤；在趨勢週期用擺盪指標會太早離場。</p>
+
+    <h2>第三步：兩種週期，兩套武器</h2>
+    <h3>極短線（1–15 分 K）：要即時性，用 VWAP</h3>
+    <p>短週期充滿雜訊，需要能立刻反應當日力道的工具。VWAP（成交量加權平均價）是短線交易者的生命線：價格在 VWAP 之上，代表主力資金今天站在買方，只找機會做多；跌破就走人，規則簡單明確，不給猶豫空間。</p>
+    <h3>波段（4 小時–日線）：要結構，用均線組合＋ATR 停損</h3>
+    <p>波段看的是結構有沒有改變。均線組合（例如 21/50/200 EMA）判斷多空排列，ATR（真實波幅）負責算停損空間：如果某檔股票一天平均波動 5 元，停損至少要放在進場點 10 元之外（約 2 倍 ATR），才不會被日內隨機震盪無辜洗出場。</p>
+    <p>一個實用的小調整：切換週期時參數也要跟著縮放——短週期可以把 RSI 參數從 14 拉到 21 過濾雜訊；長週期本身已有過濾效果，參數反而可以縮短，讓趨勢變化更早被看見。</p>
+
+    <h2>第四步：MTF 多週期——把大週期搬進小圖表</h2>
+    <p>TradingView 有個獨特的強大功能：MTF（多週期指標），讓你直接在小週期圖表上投射大週期的位階。實例：你看著台指期 15 分鐘圖，價格瘋狂下跌，看起來是追空的好機會——但圖上那條透過 MTF 投射的「1 小時週期 200 EMA」顯示，價格正好打在大級別的超級支撐上。別人看到短線破底，你看到的是大級別回調買點。這就是「大順小回」的降維優勢。在指標搜尋欄輸入 MTF 或 SMC，就能找到這類工具；頻道也有自製的多週期均線指標免費提供（見文末領取方式）。</p>
+
+    <h2>最後的心魔：長短不分</h2>
+    <p>同時做短線與波段的人，最致命的錯誤是<strong>長短不分</strong>：看 5 分鐘圖想賺個便當錢，買進立刻被套，腦中就冒出一個聲音——「沒關係，這家公司基本面很好，我改成長線波段。」這就是凹單的開始，做期貨或合約的話，往往就是爆倉的起點。解法很實際：<strong>進場前就把策略寫定、嚴格執行</strong>；並且為短線與波段建立不同的圖表版面（甚至不同背景色），用視覺強制自己切換腦袋，現在是哪一套邏輯，就照哪一套走。</p>
+
+    <div class="takeaway">
+      <h3>本篇重點整理</h3>
+      <ul>
+        <li>圖表指標以 1–3 個為限；超過就是分析癱瘓的開始。</li>
+        <li>先定義風格（趨勢／震盪／動量）再挑指標；趨勢盤禁用震盪指標逆勢操作。</li>
+        <li>三層過濾：查未來函數、看文檔完整度、守視覺簡潔度；看不懂邏輯的指標不用。</li>
+        <li>三屏分工：大週期定方向、交易週期給訊號、小週期修進場。</li>
+        <li>短線用 VWAP 定多空，波段用 ATR 算停損（至少 2 倍）；MTF 把大週期位階搬進小圖表。</li>
+        <li>進場前先定策略——短線虧損改長線，是爆倉的起點。</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="cta-row">
+    <a class="btn btn-gold" href="https://youtu.be/mroxC_uCmHw" target="_blank" rel="noopener">在 YouTube 看完整教學</a>
+    <a class="btn btn-outline" href="../index.html#indicators">領取免費指標（含多週期工具）</a>
+    <a class="btn btn-outline" href="ai-strategies-backtest.html">看回測健檢實測篇</a>
+  </div>
+
+  <div class="disclaimer">
+    <strong>免責聲明</strong>
+    <p>本文為教學分享，不構成任何投資建議。指標與策略皆需自行回測驗證，投資有風險，請自行評估。</p>
+  </div>
+
+  <a class="back-link" href="../index.html#video">← 回到影片與文章列表</a>
+</main>
+
+<footer class="site-footer">
+  <div class="wrap footer-inner">
+    <p>AI 交易智耕農 — 用量化邏輯，戰勝市場焦慮。</p>
+    <p class="footer-note">本站內容為教學分享，不構成任何投資建議。投資有風險，請自行評估。</p>
+  </div>
+</footer>
+</body>
+</html>

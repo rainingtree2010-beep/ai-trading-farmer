@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="zh-Hant-TW">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>告別手動盯盤：用 AI 10 分鐘寫出你的第一個交易策略｜AI 交易智耕農</title>
+<meta name="description" content="盯盤的三大盲點：決策疲勞、情緒綁架、機會成本。把交易想法變成規則、用 AI 生成 Pine Script、導入 TradingView 回測——附一份示範回測報告的完整讀法與四個必避的坑。">
+<link rel="stylesheet" href="../styles.css">
+<link rel="icon" href="../assets/logo.png">
+</head>
+<body>
+<header class="site-header">
+  <div class="wrap header-inner">
+    <a class="brand" href="../index.html"><img src="../assets/logo.png" alt="AI 交易智耕農" width="34" height="34">AI 交易智耕農</a>
+    <nav class="main-nav">
+      <a href="../index.html#video">教學影片</a>
+      <a href="../index.html#method">八步法</a>
+      <a href="../index.html#indicators">免費指標</a>
+      <a href="../index.html#faq">FAQ</a>
+    </nav>
+  </div>
+</header>
+
+<main class="article-main">
+  <div class="article-hero">
+    <p class="eyebrow">教學文章</p>
+    <h1>告別手動盯盤：用 AI 10 分鐘寫出你的第一個交易策略</h1>
+    <p class="article-meta">發佈於 2026 年 1 月 13 日・對應影片長度 13 分 10 秒</p>
+  </div>
+
+  <div class="video-frame">
+    <iframe src="https://www.youtube.com/embed/4i2jJHVF6Mk" title="告別手動盯盤！用 AI (Gemini) 10分鐘寫出獲利策略｜TradingView 程式交易入門教學" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen referrerpolicy="strict-origin-when-cross-origin"></iframe>
+  </div>
+
+  <div class="article-body">
+    <p>凌晨三點，你又被手機震醒。問題通常不是你不會看盤，而是你厭倦了靠感覺下單：價格剛突破，你猶豫 3 秒錯過進場點；設好的停損，因為「再給它一次機會」擴大成 30% 的虧損；明明有計畫，情緒一來全部失控。<strong>你缺的不是技術，是一套不會被情緒綁架的系統。</strong></p>
+
+    <h2>手動盯盤的三大盲點</h2>
+    <ul>
+      <li><strong>決策疲勞</strong>：盯盤時大腦要做上百次微決策（進場嗎？加碼嗎？停損放哪？）。人的決策能量有限，到了下午判斷力明顯衰退——上午 10 點和下午 4 點做的決定，品質根本不同，但市場不等人。</li>
+      <li><strong>情緒綁架</strong>：看到帳戶虧損，大腦的杏仁核會啟動「戰或逃」反應。這時你做的不是交易決策，而是情緒止血：只想快速停損、快速翻本。</li>
+      <li><strong>機會成本</strong>：每天盯盤 6 小時，一年就是 2,190 小時。時間是唯一無法回購的資產，不該全部耗在螢幕前面。</li>
+    </ul>
+    <p>先說清楚：這篇文章不是教你用 AI 暴富，而是建立「程式化交易」的效率優勢——把腦中的交易想法，變成電腦能執行的規則。</p>
+
+    <h2>四個步驟：從想法到可回測的策略</h2>
+    <figure class="figure">
+      <div class="fig-title">從想法到策略：四個步驟</div>
+      <div class="flow">
+        <div class="step"><b>1 想清楚</b>進出場條件寫成白話</div><span class="arrow">→</span>
+        <div class="step"><b>2 AI 生成</b>提示詞換 Pine Script</div><span class="arrow">→</span>
+        <div class="step"><b>3 導入測試</b>貼回錯誤訊息迭代</div><span class="arrow">→</span>
+        <div class="step"><b>4 優化迭代</b>調條件再回測</div>
+      </div>
+      <figcaption class="fig-cap">卡關最常見的是第一步：想法模糊，AI 也救不了。先把規則寫死，再談自動化。</figcaption>
+    </figure>
+    <h3>步驟一：先把策略想清楚</h3>
+    <p>AI 幫不了模糊的想法。先用白話把條件寫死，影片的示範策略是「均線突破＋RSI 過濾」：</p>
+    <ul>
+      <li><strong>進場</strong>：收盤價突破 20 日均線，且 RSI(14) 低於 50（行情剛啟動、避免追高）。</li>
+      <li><strong>出場</strong>：停損設進場價下方 3%、停利設上方 6%（風報比 1:2）；或 RSI 衝過 70 時獲利了結。</li>
+    </ul>
+    <h3>步驟二：跟 AI 對話生成程式碼</h3>
+    <p>把上面這段白話寫成提示詞，交給 AI（影片用 Google Gemini 示範）：指定角色（資深量化工程師）、語言（Pine Script v6）、進出場邏輯與其他要求（圖表標註進出場點、顯示績效統計）。傳統上學寫程式要三到六個月，現在描述清楚，十分鐘內就能拿到第一版可執行的程式碼。</p>
+    <h3>步驟三：導入 TradingView 測試</h3>
+    <p>把程式碼貼進 TradingView 的 Pine 編輯器（建立新策略、貼上、儲存、新增到圖表）。報錯是常態，不用怕：把錯誤訊息截圖貼回給 AI，請它修正，循環幾次通常就能跑通。順帶一提，TradingView 的「重播」功能可以模擬回到過去逐根 K 線覆盤，是驗證邏輯的好工具。</p>
+    <h3>步驟四：優化與迭代</h3>
+    <p>結果不理想，直接回頭跟 AI 調整：「把停損改成 ATR 的 1.5 倍」「加上成交量大於 20 日均量才進場的過濾」——一分鐘就能生出新版。這種迭代速度，就是 AI 輔助真正的威力。</p>
+
+    <h2>示範回測報告怎麼讀（重點在風險，不在報酬）</h2>
+    <p>影片的示範回測（約四個月、虛擬資金）數字很亮眼：31 筆交易、勝率 77.42%、累積獲益換算報酬率 478%。但請先看這兩個數字：</p>
+    <ul>
+      <li><strong>最大回撤 163%</strong>：代表帳戶在最差的時候，虧損超過初始本金——若本金 100 萬，最慘會虧到倒欠 63 萬等級。執行這種策略，你得準備遠超本金的資金與心理素質。回撤超過 100% 的策略，本質上已經爆倉過一次。</li>
+      <li><strong>獲利因子 1.384</strong>：平均獲利只有平均虧損的 1.384 倍。勝率雖高，但賺賠幅度沒有壓倒性優勢；穩健的策略，這個數字最好在 2 以上。</li>
+    </ul>
+    <div class="stat-row">
+        <div class="stat"><div class="num">77.42%</div><div class="lbl">示範回測勝率（31 筆）</div></div>
+        <div class="stat warn"><div class="num">163%</div><div class="lbl">最大回撤——超過本金，等於爆倉過一次</div></div>
+        <div class="stat warn"><div class="num">1.384</div><div class="lbl">獲利因子——低於穩健參考值 2</div></div>
+      </div>
+    <p>而且示範期間的資金曲線在盤整段出現連續停損——高勝率策略在震盪盤一樣會連錯。<strong>回測永遠比實盤漂亮</strong>：實盤還有滑點、手續費與突發衝擊。上實盤前，先用小資金或模擬帳戶跑至少一個月。（回測報告的完整讀法，見<a href="backtest-traps.html">回測陷阱篇</a>；這套方法實測 AI 策略的結果，見<a href="ai-strategies-backtest.html">5 策略全滅篇</a>。）</p>
+
+    <h2>四個現實，必須先知道</h2>
+    <ol>
+      <li><strong>沒有聖杯策略</strong>：任何策略都有失效期，市場一直在變。每季檢視一次績效，是基本功。</li>
+      <li><strong>過度優化是最大的坑</strong>：把參數調到完美貼合歷史，上實盤就慘敗。做法：保留最近 6 個月的數據不參與回測，拿來做「樣本外驗證」——沒看過的數據上還行，才有真實價值。</li>
+      <li><strong>風險管理才是核心</strong>：自動化是解放時間，不是讓你加倍下注。單筆交易風險不超過帳戶的 2%，連錯 10 次也只虧 20%，不會爆倉。</li>
+      <li><strong>AI 寫的程式碼也要驗證</strong>：AI 會產生邏輯錯誤。先在模擬或小資金驗證執行邏輯符合預期，再放大資金。</li>
+    </ol>
+
+    <div class="takeaway">
+      <h3>行動清單</h3>
+      <ul>
+        <li><strong>本週</strong>：寫下你現在的交易邏輯（模糊也行，跟 AI 對談理清）、註冊 TradingView 免費帳戶、生成你的第一版策略。</li>
+        <li><strong>本月</strong>：回測至少 3 組參數組合；在模擬帳戶運行 30 天；記錄每筆交易的執行偏差。</li>
+        <li><strong>長期</strong>：每季檢視策略績效，持續跟上市場變化。</li>
+      </ul>
+    </div>
+
+    <p>這套方法省下的不只是學程式的時間。更重要的是：你不再因為錯過行情而自責、不再因為虧損而失眠——交易應該是財富增長的工具，而不是消耗生命的黑洞。</p>
+  </div>
+
+  <div class="cta-row">
+    <a class="btn btn-gold" href="https://youtu.be/4i2jJHVF6Mk" target="_blank" rel="noopener">在 YouTube 看完整實作</a>
+    <a class="btn btn-outline" href="candlestick-signals.html">進階：K 線 8 信號篇</a>
+    <a class="btn btn-outline" href="../index.html#method">看八步法完整拆解</a>
+  </div>
+
+  <div class="disclaimer">
+    <strong>免責聲明</strong>
+    <p>本文為教學分享，不構成任何投資建議。文中回測數字為影片示範，非實盤績效；投資有風險，請自行評估。</p>
+  </div>
+
+  <a class="back-link" href="../index.html#video">← 回到影片與文章列表</a>
+</main>
+
+<footer class="site-footer">
+  <div class="wrap footer-inner">
+    <p>AI 交易智耕農 — 用量化邏輯，戰勝市場焦慮。</p>
+    <p class="footer-note">本站內容為教學分享，不構成任何投資建議。投資有風險，請自行評估。</p>
+  </div>
+</footer>
+</body>
+</html>

@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="zh-Hant-TW">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>MKR 核回歸指標實戰：擺脫均線滯後的高盈虧比濾波器｜AI 交易智耕農</title>
+<meta name="description" content="傳統均線慢半拍，進場成本高、容易被洗出場。Multi Kernel Regression 用核函數加權取代死板平均，本文拆解它的原理、參數、進出場與最重要的避坑設定。">
+<link rel="stylesheet" href="../styles.css">
+<link rel="icon" href="../assets/logo.png">
+</head>
+<body>
+<header class="site-header">
+  <div class="wrap header-inner">
+    <a class="brand" href="../index.html"><img src="../assets/logo.png" alt="AI 交易智耕農" width="34" height="34">AI 交易智耕農</a>
+    <nav class="main-nav">
+      <a href="../index.html#video">教學影片</a>
+      <a href="../index.html#method">八步法</a>
+      <a href="../index.html#indicators">免費指標</a>
+      <a href="../index.html#faq">FAQ</a>
+    </nav>
+  </div>
+</header>
+
+<main class="article-main">
+  <div class="article-hero">
+    <p class="eyebrow">教學文章</p>
+    <h1>MKR 核回歸指標實戰：擺脫均線滯後，追求高盈虧比的濾波器</h1>
+    <p class="article-meta">發佈於 2026 年 4 月 8 日・對應影片長度 5 分 37 秒</p>
+  </div>
+
+  <div class="video-frame">
+    <iframe src="https://www.youtube.com/embed/n1w-fgfh2_Y" title="資深量化交易員賺百萬美金的高盈虧比指標：揭密 MKR 實戰邏輯，這才是真實的交易！" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen referrerpolicy="strict-origin-when-cross-origin"></iframe>
+  </div>
+
+  <div class="article-body">
+    <p>傳統均線（SMA、EMA）有一個共同的痛點：<strong>訊號滯後</strong>。趨勢你看對了，卻總是慢半拍進場，成本墊高之後，又被上下波動洗出場。Multi Kernel Regression（MKR，多核回歸）是量化圈用來解決這個問題的工具——它不是普通的均線，而是一台用數學演算法過濾市場雜訊的「濾波器」，目標是在合理的進場位置，換取高盈虧比的波段。</p>
+
+    <h2>原理：不是平均價格，而是「加權」價格</h2>
+    <p>傳統均線把一段期間的價格死板地平均；核回歸的做法不同：它透過<strong>核函數（Kernel）做權重運算，離現在越近的價格，份量越重</strong>，同時又能把曲線修得平滑。這款由 ChartPrime 開發的指標內建 17 種核函數，常用的兩種性格完全不同：</p>
+    <ul>
+      <li><strong>Gaussian（高斯）</strong>：極致平滑，適合看大方向、過濾雜訊。</li>
+      <li><strong>Laplace（拉普拉斯）</strong>：對趨勢反轉超級靈敏，適合抓轉折。</li>
+    </ul>
+
+    <figure class="figure">
+      <div class="fig-title">核回歸在做什麼：把雜訊濾掉，把趨勢留下來</div>
+      <svg viewBox="0 0 560 200" role="img" aria-label="核回歸濾波示意圖">
+        <polyline points="0,150 30,138 60,158 90,120 120,140 150,104 180,126 210,96 240,116 270,84 300,102 330,70 360,92 390,60 420,80 450,52 480,66 510,40 540,54 560,44" fill="none" stroke="#8B93A1" stroke-width="1.6" opacity="0.75"/>
+        <path d="M0,148 C60,146 90,128 150,112 C210,96 240,100 300,84 C360,68 420,66 480,50 C520,40 540,44 560,40" fill="none" stroke="#B08D4C" stroke-width="3.4"/>
+        <path d="M0,124 C60,122 90,104 150,88 C210,72 240,76 300,60 C360,44 420,42 480,26 C520,16 540,20 560,16" fill="none" stroke="#B08D4C" stroke-width="1.2" stroke-dasharray="5 5" opacity="0.55"/>
+        <path d="M0,172 C60,170 90,152 150,136 C210,120 240,124 300,108 C360,92 420,90 480,74 C520,64 540,68 560,64" fill="none" stroke="#B08D4C" stroke-width="1.2" stroke-dasharray="5 5" opacity="0.55"/>
+      </svg>
+      <figcaption class="fig-cap">示意圖：灰線是原始價格（雜訊多），金色實線是核回歸曲線，虛線是偏差通道——價格噴到外軌，就是分批止盈的位置。</figcaption>
+    </figure>
+    <h2>最重要的一步：先把 Repaint 關掉</h2>
+    <p>這款指標有一個 Repaint（重繪）選項。<strong>開啟它，歷史圖會準得像神一樣——但那全是事後粉飾的馬後炮。</strong>實盤使用請務必在設定裡取消勾選。關掉之後曲線會稍微抖動，但那才是你真正能用來交易的即時訊號。真實，是交易的唯一準則。（重繪的原理與查驗方法，可參考<a href="indicator-selection.html">指標三層過濾法</a>一文的第一層。）</p>
+    <div class="callout"><strong>重點提醒：</strong>開著 Repaint 的回測與歷史圖，準確度是「事後修正」出來的假象。任何指標到手，第一件事就是關掉重繪、用重播功能逐根 K 線驗證訊號穩不穩定。</div>
+
+    <h2>參數設定：Bandwidth 決定性格</h2>
+    <table>
+      <tr><th>交易風格</th><th>Bandwidth 建議</th></tr>
+      <tr><td>超短線</td><td>8 – 12</td></tr>
+      <tr><td>日內波段</td><td>14 – 25</td></tr>
+      <tr><td>中長線</td><td>30 – 60</td></tr>
+    </table>
+    <p>核函數選 Gaussian 或 Laplace，並勾選偏差通道（Dev Bands），基本設定就完成了。</p>
+
+    <h2>進出場：顏色、標籤、通道</h2>
+    <ul>
+      <li><strong>看顏色</strong>：曲線由紅變綠＝多頭動能啟動；由綠變紅＝空頭佔優。</li>
+      <li><strong>看標籤</strong>：出現「Up」標籤且曲線為綠色，再配合價格回踩曲線不破，就是做多的進場點（做空反之，看「Down」）。</li>
+      <li><strong>看通道</strong>：進場後停損設在前一根 K 線的低點（做多）；止盈用盈虧比 1:2 規劃，或等價格噴到偏差通道外軌時分批止盈。</li>
+    </ul>
+
+    <h2>它的弱點與改良：盤整假訊號＋ADX 過濾</h2>
+    <p>MKR 最大的缺點，是在橫盤震盪期會頻繁紅綠交替、假訊號連發。解法是疊加趨勢強度過濾：把指標原始碼交給 AI（例如 Gemini），請它<strong>結合 ADX 改寫成自己的版本</strong>——ADX 低於門檻（預設 25）時不發訊號，等於自動在盤整期閉嘴；操作加密貨幣等高波動商品時，可以再把門檻調高，濾掉更多雜訊。</p>
+    <p>改良版的實戰打法（以做空為例）：中軸線為紅色代表空方趨勢，出現向下賣出訊號時，可在收盤進場；若價格離中軸太遠，等它回測中軸附近再進，停損設前高，盈虧比抓 1:2，或跌破下方標準差通道時分批止盈。用最低的風險，去換最好的報酬——這就是高盈虧比的本質。</p>
+    <p>提醒：改良完先手動回測，找出適合自己的週期與進出場節奏，再上實盤。頻道的免費指標裡就有這支 <strong>MKR＋ADX 改良版</strong>可以直接領取，省下自己改寫的時間。</p>
+
+    <div class="takeaway">
+      <h3>本篇重點整理</h3>
+      <ul>
+        <li>MKR 用核函數加權取代均線的死板平均：近價權重高、曲線又平滑，專治訊號滯後。</li>
+        <li>使用前第一件事：關閉 Repaint。歷史越完美，越可能是重繪騙局。</li>
+        <li>進出場三看：曲線顏色定方向、標籤＋回踩定進場、通道外軌分批止盈，盈虧比至少 1:2。</li>
+        <li>盤整期假訊號是它的天敵：疊加 ADX 過濾（門檻 25 起），讓指標在沒趨勢時閉嘴。</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="cta-row">
+    <a class="btn btn-gold" href="https://youtu.be/n1w-fgfh2_Y" target="_blank" rel="noopener">在 YouTube 看實戰演練</a>
+    <a class="btn btn-outline" href="../index.html#indicators">免費領取 MKR＋ADX 指標</a>
+    <a class="btn btn-outline" href="zlema-zero-lag.html">看 ZLEMA 零延遲篇</a>
+  </div>
+
+  <div class="disclaimer">
+    <strong>免責聲明</strong>
+    <p>本文為教學分享，不構成任何投資建議。指標參數需依個人風格回測調整，投資有風險，請自行評估。</p>
+  </div>
+
+  <a class="back-link" href="../index.html#video">← 回到影片與文章列表</a>
+</main>
+
+<footer class="site-footer">
+  <div class="wrap footer-inner">
+    <p>AI 交易智耕農 — 用量化邏輯，戰勝市場焦慮。</p>
+    <p class="footer-note">本站內容為教學分享，不構成任何投資建議。投資有風險，請自行評估。</p>
+  </div>
+</footer>
+</body>
+</html>

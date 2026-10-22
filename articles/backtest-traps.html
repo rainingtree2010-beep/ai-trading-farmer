@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="zh-Hant-TW">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>回測數據的隱藏陷阱：策略報告要這樣看，才不會一上實盤就賠錢｜AI 交易智耕農</title>
+<meta name="description" content="總損益最會騙人。回測前先設手續費與滑點，再看懂最大回撤、獲利因子與勝率迷思，最後避開過度擬合——附兩個自動找參數的 Chrome 擴充功能。">
+<link rel="stylesheet" href="../styles.css">
+<link rel="icon" href="../assets/logo.png">
+</head>
+<body>
+<header class="site-header">
+  <div class="wrap header-inner">
+    <a class="brand" href="../index.html"><img src="../assets/logo.png" alt="AI 交易智耕農" width="34" height="34">AI 交易智耕農</a>
+    <nav class="main-nav">
+      <a href="../index.html#video">教學影片</a>
+      <a href="../index.html#method">八步法</a>
+      <a href="../index.html#indicators">免費指標</a>
+      <a href="../index.html#faq">FAQ</a>
+    </nav>
+  </div>
+</header>
+
+<main class="article-main">
+  <div class="article-hero">
+    <p class="eyebrow">教學文章</p>
+    <h1>回測數據的隱藏陷阱：為什麼漂亮的策略，一上實盤就賠錢</h1>
+    <p class="article-meta">發佈於 2026 年 2 月 13 日・對應影片長度 8 分 04 秒</p>
+  </div>
+
+  <div class="video-frame">
+    <iframe src="https://www.youtube.com/embed/g3aEG--rXqw" title="完美的策略在實盤賠錢？3 分鐘看懂回測數據背後的「爆倉陷阱」" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen referrerpolicy="strict-origin-when-cross-origin"></iframe>
+  </div>
+
+  <div class="article-body">
+    <p>看到黃金交叉就梭哈、進場就反轉停損——這不是運氣不好，是你的「感覺」在騙你。量化交易不相信感覺，只相信回測。但回測本身也有一堆陷阱：設定沒做對，報告再漂亮都只是無法上實盤的花瓶。這篇文章帶你把 TradingView 策略報告從設定到解讀完整走一遍。</p>
+
+    <h2>回測之前：先把成本設進去</h2>
+    <p>打開策略報告（Strategy Tester）後，不要急著看總損益，先進策略「設定」的屬性，把兩個數字填上：</p>
+    <ul>
+      <li><strong>手續費</strong>：例如幣圈合約常見 0.06% 或 0.1%。不設手續費的回測，等於假設交易免費——現實世界不存在。</li>
+      <li><strong>滑點（Slippage）</strong>：價格波動大的商品要留滑點空間（示範中虛擬幣設 6 個 ticks 等級），成交價永遠比你看到的差一點。</li>
+    </ul>
+    <p>設好之後按下確定，那條資產淨值曲線，才是接近真實世界的樣子。</p>
+
+    <h2>四個關鍵數據，順序不能錯</h2>
+    <h3>1. 總損益（Net Profit）——最不重要的一個</h3>
+    <p>當然越多越好，但它排在最後看。只看總損益的人，最容易被騙。</p>
+    <h3>2. 最大回撤（Max Drawdown）——核心指標</h3>
+    <p>它代表帳戶在最倒霉的時候，從高點跌下來多少百分比。如果一個策略淨利 100%，但最大回撤 50%，你要先問自己：資產腰斬的過程，我受得了嗎？受不了，這個策略對你就沒有用——因為你會在最低點親手把它關掉。</p>
+    <div class="callout"><strong>先問自己一句話：</strong>這條策略歷史上最慘曾經跌掉多少？如果答案你承受不住，淨利再漂亮都與你無關——因為你會在最低點親手關掉它。</div>
+    <h3>3. 獲利因子（Profit Factor）——賺得辛不辛苦</h3>
+    <p>總獲利除以總虧損。一般要大於 1.5，理想是 2 以上。只有 1.1 的策略，代表你賺得非常辛苦，隨便多一點滑點、多繳一點手續費，就翻負了。</p>
+    <h3>4. 勝率（Percent Profitable）——新手最大的迷思</h3>
+    <p>勝率 90% 但每次賺 1 塊、賠 100 塊，一樣會破產。真正要追求的是<strong>高盈虧比</strong>，不是高勝率。穩定的低回撤，遠比一時的亮眼回報重要。</p>
+
+    <h2>參數不用手動試：兩個自動化幫手</h2>
+    <p>均線參數 20 不好，要換 25 還是 30？一個一個手動試是幾百小時的苦工。影片介紹了兩個 Chrome 擴充功能：</p>
+    <ul>
+      <li><strong>TradingView Strategy Optimizer</strong>（半自動）：給定參數範圍與步進值，它會一組一組自動跑回測，即時顯示目前最優參數的總損益、最大回撤與勝率，跑完一鍵套用最佳結果。免費版一次跑一組參數，適合逐項微調。</li>
+      <li><strong>TradingView Assistant</strong>（免費開源、全自動）：用隨機改良法搜尋參數組合，可設定最佳化目標（例如以最大回撤或獲利因子優先）、多週期回測與嘗試次數，跑完自動下載 CSV 結果。注意：它靠模擬點擊運作，TradingView 改版後可能暫時失效需等更新，免費版廣告跳出也可能中斷回測。</li>
+    </ul>
+
+    <h2>最後的陷阱：過度擬合（Overfitting）</h2>
+    <p>用工具找到「過去三年賺翻」的參數，先別高興。如果最佳參數的數值非常奇怪或極端，它在未來很可能完全無效。判斷方法很簡單：<strong>好的參數應該是一片「平原」，而不是一座「孤峰」。</strong>如果 30 是最佳參數，29 和 31 的表現應該也不差；如果只有 30 賺錢、旁邊全賠，這組參數就是把歷史背下來而已，千萬別用。</p>
+    <figure class="figure">
+      <div class="fig-title">挑參數：選平原，不要選孤峰</div>
+      <div class="pattern-grid" style="grid-template-columns:1fr 1fr">
+        <div class="pattern-card">
+          <svg viewBox="0 0 260 150" role="img" aria-label="平原參數示意">
+            <path d="M10,128 C50,124 70,74 105,66 C140,58 175,60 205,70 C230,78 240,110 252,124" fill="none" stroke="#B08D4C" stroke-width="3"/>
+            <line x1="6" y1="132" x2="254" y2="132" stroke="#8B93A1" stroke-width="1.4"/>
+            <text x="96" y="46" fill="#B08D4C" font-size="13">29・30・31 都賺</text>
+          </svg>
+          <h4>平原型參數</h4><p>最佳值附近表現都好——對未來行情有容錯空間，可用。</p>
+        </div>
+        <div class="pattern-card">
+          <svg viewBox="0 0 260 150" role="img" aria-label="孤峰參數示意">
+            <path d="M10,126 C70,124 105,122 122,118 C132,115 136,30 142,26 C148,30 152,112 162,118 C190,124 225,125 252,126" fill="none" stroke="#B96A5B" stroke-width="3"/>
+            <line x1="6" y1="132" x2="254" y2="132" stroke="#8B93A1" stroke-width="1.4"/>
+            <text x="88" y="16" fill="#B96A5B" font-size="13">只有 30 賺錢</text>
+          </svg>
+          <h4>孤峰型參數</h4><p>只有單一數值賺錢、旁邊全賠——典型的過度擬合，別用。</p>
+        </div>
+      </div>
+      <figcaption class="fig-cap">示意圖：橫軸是參數值、縱軸是回測表現。平原代表邏輯本身成立；孤峰代表把歷史背下來了。</figcaption>
+    </figure>
+    <p>想看這套健檢標準實際抓出多少問題，可以接著看<a href="ai-strategies-backtest.html">AI 策略 5 個全滅的實測篇</a>——同一套邏輯，結論很殘酷。</p>
+
+    <div class="takeaway">
+      <h3>本篇重點整理</h3>
+      <ul>
+        <li>回測前先設手續費與滑點，否則報告只是花瓶。</li>
+        <li>看數據的順序：最大回撤 → 獲利因子 → 盈虧比，最後才是總損益與勝率。</li>
+        <li>勝率高不等於會賺錢；回撤你承受不住的策略，績效再好都與你無關。</li>
+        <li>找參數用工具省時間，但要避開過度擬合：選平原，不要選孤峰。</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="cta-row">
+    <a class="btn btn-gold" href="https://youtu.be/g3aEG--rXqw" target="_blank" rel="noopener">在 YouTube 看完整教學</a>
+    <a class="btn btn-outline" href="ai-strategies-backtest.html">看 5 策略健檢實測篇</a>
+    <a class="btn btn-outline" href="../index.html#indicators">領取免費指標</a>
+  </div>
+
+  <div class="disclaimer">
+    <strong>免責聲明</strong>
+    <p>本文為教學分享，不構成任何投資建議。回測結果不代表未來績效，投資有風險，請自行評估。</p>
+  </div>
+
+  <a class="back-link" href="../index.html#video">← 回到影片與文章列表</a>
+</main>
+
+<footer class="site-footer">
+  <div class="wrap footer-inner">
+    <p>AI 交易智耕農 — 用量化邏輯，戰勝市場焦慮。</p>
+    <p class="footer-note">本站內容為教學分享，不構成任何投資建議。投資有風險，請自行評估。</p>
+  </div>
+</footer>
+</body>
+</html>
